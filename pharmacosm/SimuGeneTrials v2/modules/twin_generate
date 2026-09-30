@@ -1,0 +1,4 @@
+from engine.digital_twin import generate_digital_twin
+
+def get_digital_twin(patient_data):
+    return generate_digital_twin(patient_data)

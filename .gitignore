@@ -1,0 +1,21 @@
+ocr_env/
+node_modules/
+__pycache__/
+*.pyc
+.env
+venv/
+venv
+env/
+env
+.venv/
+.venv
+
+# Large model files
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.gguf
+*.onnx
+*.h5
+*.pb

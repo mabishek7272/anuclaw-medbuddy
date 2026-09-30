@@ -1,0 +1,697 @@
+import React, { useState, useRef, useCallback, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useQuery } from '@tanstack/react-query';
+import {
+  FlaskConical, Play, Square, Upload, X, FileText, Download,
+  ChevronRight, Search, Shield, Eye, EyeOff, CheckCircle,
+  AlertTriangle, Cpu, Dna, Microscope, Pill, ClipboardList,
+  Brain, ShieldCheck, FileSearch, Activity, Zap, Clock,
+  RotateCcw, Copy, ExternalLink, Info,
+} from 'lucide-react';
+import { GlassCard } from '../components/GlassCard';
+
+// ─── Types ──────────────────────────────────────────────────────────────────
+interface SkillMeta {
+  name: string;
+  title: string;
+  description: string;
+  domain: string;
+  capabilities: string[];
+  inputHint: string;
+  stats: { invocations: number; avg_latency: number; success_rate: number };
+}
+
+interface RunEvent {
+  type: 'start' | 'file' | 'output' | 'artifacts' | 'error' | 'done' | 'system';
+  text?: string;
+  message?: string;
+  latencyMs?: number;
+  success?: boolean;
+  error?: string;
+  files?: string[];
+  name?: string;
+  size?: number;
+  ts?: number;
+}
+
+// ─── Domain config ───────────────────────────────────────────────────────────
+const DOMAIN_CONFIG: Record<string, { color: string; icon: React.ReactNode }> = {
+  'Clinical':       { color: '#00B8CC', icon: <Microscope size={14} /> },
+  'Genomics':       { color: '#9C27B0', icon: <Dna size={14} /> },
+  'Drug Discovery': { color: '#FF6D00', icon: <Pill size={14} /> },
+  'EHR / PMR':      { color: '#00C878', icon: <ClipboardList size={14} /> },
+  'Compliance':     { color: '#FFB300', icon: <ShieldCheck size={14} /> },
+  'NLP':            { color: '#26C6DA', icon: <FileSearch size={14} /> },
+  'Lab':            { color: '#CE93D8', icon: <FlaskConical size={14} /> },
+  'General':        { color: '#546E7A', icon: <Cpu size={14} /> },
+};
+
+const ALL_DOMAINS = Object.keys(DOMAIN_CONFIG);
+
+// ─── Skill card (left panel) ─────────────────────────────────────────────────
+function SkillListItem({ skill, active, onClick }: {
+  skill: SkillMeta; active: boolean; onClick: () => void;
+}) {
+  const cfg = DOMAIN_CONFIG[skill.domain] ?? DOMAIN_CONFIG['General'];
+  return (
+    <button
+      onClick={onClick}
+      className="w-full text-left px-3 py-2.5 rounded-xl transition-all duration-200 relative group"
+      style={{
+        background: active ? `${cfg.color}12` : 'transparent',
+        border: `1px solid ${active ? cfg.color + '35' : 'transparent'}`,
+      }}
+    >
+      {active && <div className="absolute left-0 top-2 bottom-2 w-0.5 rounded-full" style={{ background: cfg.color }} />}
+      <div className="flex items-center gap-2">
+        <span style={{ color: cfg.color }}>{cfg.icon}</span>
+        <span className="font-mono text-xs font-semibold truncate flex-1" style={{ color: active ? '#E8EEF6' : 'var(--text-muted)', fontSize: 11 }}>
+          {skill.name}
+        </span>
+        <span className="text-3xs px-1.5 py-0.5 rounded-full shrink-0"
+          style={{ background: `${cfg.color}18`, color: cfg.color, fontSize: 9, border: `1px solid ${cfg.color}25` }}>
+          {skill.domain.split(' ')[0]}
+        </span>
+      </div>
+      <p className="text-3xs mt-0.5 truncate pl-5" style={{ color: 'var(--text-muted)', fontSize: 10 }}>{skill.description || skill.title}</p>
+    </button>
+  );
+}
+
+// ─── File drop zone ──────────────────────────────────────────────────────────
+function FileDropZone({ files, onChange }: { files: File[]; onChange: (files: File[]) => void }) {
+  const [dragging, setDragging] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  function handleDrop(e: React.DragEvent) {
+    e.preventDefault(); setDragging(false);
+    const dropped = Array.from(e.dataTransfer.files);
+    onChange([...files, ...dropped].slice(0, 5));
+  }
+
+  function handleFiles(e: React.ChangeEvent<HTMLInputElement>) {
+    const picked = Array.from(e.target.files ?? []);
+    onChange([...files, ...picked].slice(0, 5));
+    e.target.value = '';
+  }
+
+  function removeFile(i: number) {
+    onChange(files.filter((_, idx) => idx !== i));
+  }
+
+  const ACCEPT = '.pdf,.txt,.csv,.tsv,.fasta,.fa,.vcf,.json,.xml,.docx,.xlsx,.png,.jpg,.jpeg,.tiff,.dicom';
+
+  return (
+    <div className="space-y-2">
+      <div
+        onDragOver={e => { e.preventDefault(); setDragging(true); }}
+        onDragLeave={() => setDragging(false)}
+        onDrop={handleDrop}
+        onClick={() => inputRef.current?.click()}
+        className="relative border-2 border-dashed rounded-xl p-4 text-center cursor-pointer transition-all duration-200"
+        style={{
+          borderColor: dragging ? '#00B8CC' : 'rgba(255,255,255,0.1)',
+          background: dragging ? 'rgba(0,184,204,0.04)' : 'rgba(255,255,255,0.02)',
+        }}
+      >
+        <input ref={inputRef} type="file" multiple accept={ACCEPT} className="hidden" onChange={handleFiles} />
+        <Upload size={18} className="mx-auto mb-1.5" style={{ color: dragging ? '#00B8CC' : 'var(--text-muted)' }} />
+        <p className="text-xs" style={{ color: dragging ? '#00B8CC' : 'var(--text-muted)' }}>
+          Drop files here or <span style={{ color: '#00B8CC' }}>browse</span>
+        </p>
+        <p className="text-3xs mt-0.5" style={{ color: 'var(--text-muted)', fontSize: 10 }}>
+          PDF, FASTA, VCF, CSV, DICOM, images — up to 5 files · 50 MB each
+        </p>
+      </div>
+
+      <AnimatePresence>
+        {files.map((f, i) => (
+          <motion.div
+            key={`${f.name}-${i}`}
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="flex items-center gap-2 px-3 py-2 rounded-lg"
+            style={{ background: 'rgba(0,184,204,0.05)', border: '1px solid rgba(0,184,204,0.15)' }}
+          >
+            <FileText size={12} style={{ color: '#00B8CC' }} />
+            <span className="flex-1 text-xs truncate font-mono" style={{ color: '#E8EEF6', fontSize: 11 }}>{f.name}</span>
+            <span className="text-3xs" style={{ color: 'var(--text-muted)', fontSize: 10 }}>{(f.size / 1024).toFixed(1)} KB</span>
+            <button onClick={() => removeFile(i)} className="ml-1 opacity-50 hover:opacity-100 transition-opacity">
+              <X size={11} style={{ color: '#FF1744' }} />
+            </button>
+          </motion.div>
+        ))}
+      </AnimatePresence>
+    </div>
+  );
+}
+
+// ─── Compliance panel ────────────────────────────────────────────────────────
+interface Compliance {
+  audit: boolean;
+  pii: boolean;
+  strict: boolean;
+}
+
+function CompliancePanel({ value, onChange }: { value: Compliance; onChange: (v: Compliance) => void }) {
+  const items = [
+    {
+      key: 'audit' as const,
+      icon: <ShieldCheck size={13} />,
+      color: '#00C878',
+      label: 'Audit Trail',
+      desc: 'Log this run to the signed audit ledger with input/output hash',
+    },
+    {
+      key: 'pii' as const,
+      icon: <EyeOff size={13} />,
+      color: '#FFB300',
+      label: 'PII Masking',
+      desc: 'Instruct the skill to redact personally identifiable information from output',
+    },
+    {
+      key: 'strict' as const,
+      icon: <AlertTriangle size={13} />,
+      color: '#FF6D00',
+      label: 'Strict Compliance',
+      desc: 'Require regulatory risk flags before proceeding (ICH E6, HIPAA, GDPR)',
+    },
+  ];
+
+  return (
+    <div className="space-y-2">
+      {items.map(({ key, icon, color, label, desc }) => (
+        <button
+          key={key}
+          onClick={() => onChange({ ...value, [key]: !value[key] })}
+          className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-left transition-all duration-200"
+          style={{
+            background: value[key] ? `${color}08` : 'transparent',
+            border: `1px solid ${value[key] ? color + '30' : 'rgba(255,255,255,0.06)'}`,
+          }}
+        >
+          <div className="w-4 h-4 rounded border-2 flex items-center justify-center shrink-0 transition-all"
+            style={{ borderColor: value[key] ? color : 'rgba(255,255,255,0.2)', background: value[key] ? color : 'transparent' }}>
+            {value[key] && <CheckCircle size={10} style={{ color: '#fff' }} />}
+          </div>
+          <span style={{ color }}>{icon}</span>
+          <div className="flex-1 min-w-0">
+            <p className="text-xs font-semibold" style={{ color: value[key] ? '#E8EEF6' : 'var(--text-muted)' }}>{label}</p>
+            <p className="text-3xs leading-tight mt-0.5 truncate" style={{ color: 'var(--text-muted)', fontSize: 10 }}>{desc}</p>
+          </div>
+        </button>
+      ))}
+    </div>
+  );
+}
+
+// ─── Output panel ────────────────────────────────────────────────────────────
+function OutputPanel({ events, running }: { events: RunEvent[]; running: boolean }) {
+  const bottomRef = useRef<HTMLDivElement>(null);
+  const [copied, setCopied] = useState(false);
+
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [events]);
+
+  const outputText = events.find(e => e.type === 'output')?.text ?? '';
+  const doneEvent  = events.find(e => e.type === 'done');
+  const errorEvent = events.find(e => e.type === 'error');
+  const artifacts  = events.find(e => e.type === 'artifacts')?.files ?? [];
+  const fileEvents = events.filter(e => e.type === 'file');
+
+  function copyOutput() {
+    navigator.clipboard.writeText(outputText).then(() => { setCopied(true); setTimeout(() => setCopied(false), 2000); });
+  }
+
+  if (events.length === 0) {
+    return (
+      <div className="flex-1 flex flex-col items-center justify-center gap-3 py-16" style={{ color: 'var(--text-muted)' }}>
+        <FlaskConical size={40} className="opacity-15" />
+        <p className="text-sm">Configure a skill and press Run to start</p>
+        <p className="text-xs opacity-60">Results stream live as the skill executes</p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="flex-1 flex flex-col gap-3 overflow-hidden">
+      {/* Status bar */}
+      <div className="flex items-center gap-3 px-1">
+        {running ? (
+          <>
+            <span className="w-2 h-2 rounded-full dot-online animate-pulse" />
+            <span className="text-xs font-medium" style={{ color: '#00E676' }}>Running…</span>
+          </>
+        ) : doneEvent ? (
+          <>
+            <span className={`w-2 h-2 rounded-full ${doneEvent.success ? 'dot-online' : 'dot-danger'}`} />
+            <span className="text-xs font-medium" style={{ color: doneEvent.success ? '#00E676' : '#FF1744' }}>
+              {doneEvent.success ? 'Completed' : 'Failed'}
+            </span>
+            {doneEvent.latencyMs && (
+              <span className="text-xs ml-auto flex items-center gap-1" style={{ color: 'var(--text-muted)' }}>
+                <Clock size={10} /> {(doneEvent.latencyMs / 1000).toFixed(1)}s
+              </span>
+            )}
+          </>
+        ) : null}
+        {outputText && !running && (
+          <button onClick={copyOutput} className="btn-ghost-med flex items-center gap-1 text-xs py-0.5 px-2 ml-auto">
+            {copied ? <><CheckCircle size={10} style={{ color: '#00C878' }} /> Copied</> : <><Copy size={10} /> Copy</>}
+          </button>
+        )}
+      </div>
+
+      {/* File upload confirmations */}
+      {fileEvents.length > 0 && (
+        <div className="flex flex-wrap gap-1.5">
+          {fileEvents.map((e, i) => (
+            <span key={i} className="flex items-center gap-1 px-2 py-1 rounded-lg text-3xs"
+              style={{ background: 'rgba(0,184,204,0.08)', color: '#00B8CC', border: '1px solid rgba(0,184,204,0.2)', fontSize: 10 }}>
+              <FileText size={9} /> {e.name} ({((e.size ?? 0) / 1024).toFixed(0)} KB)
+            </span>
+          ))}
+        </div>
+      )}
+
+      {/* Main output */}
+      <div
+        className="flex-1 overflow-y-auto rounded-xl p-4 font-mono text-sm leading-relaxed relative"
+        style={{
+          background: 'rgba(0,0,0,0.35)',
+          border: `1px solid ${errorEvent ? 'rgba(255,23,68,0.2)' : 'rgba(0,184,204,0.12)'}`,
+          minHeight: 200,
+        }}
+      >
+        {running && !outputText && (
+          <div className="flex items-center gap-2" style={{ color: 'var(--text-muted)' }}>
+            <span className="w-1.5 h-1.5 rounded-full dot-online animate-pulse" />
+            <span className="text-xs">Executing skill…</span>
+          </div>
+        )}
+
+        {errorEvent && (
+          <div className="flex items-start gap-2 mb-3 p-3 rounded-lg"
+            style={{ background: 'rgba(255,23,68,0.07)', border: '1px solid rgba(255,23,68,0.2)' }}>
+            <AlertTriangle size={13} style={{ color: '#FF1744', marginTop: 1 }} />
+            <div>
+              <p className="text-xs font-semibold" style={{ color: '#FF1744' }}>Execution Error</p>
+              <p className="text-xs mt-0.5" style={{ color: '#FF6090' }}>{errorEvent.message}</p>
+            </div>
+          </div>
+        )}
+
+        {outputText && (
+          <AnimatePresence>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="whitespace-pre-wrap text-xs"
+              style={{ color: '#C8D8E8', fontSize: 12, lineHeight: 1.7 }}
+            >
+              {outputText}
+            </motion.div>
+          </AnimatePresence>
+        )}
+        <div ref={bottomRef} />
+      </div>
+
+      {/* Artifacts */}
+      {artifacts.length > 0 && (
+        <div className="space-y-1.5">
+          <p className="text-xs font-semibold" style={{ color: 'var(--text-muted)' }}>Output Artifacts</p>
+          {artifacts.map((art, i) => (
+            <div key={i} className="flex items-center gap-2 px-3 py-2 rounded-lg"
+              style={{ background: 'rgba(0,200,120,0.06)', border: '1px solid rgba(0,200,120,0.2)' }}>
+              <Download size={12} style={{ color: '#00C878' }} />
+              <span className="text-xs font-mono flex-1 truncate" style={{ color: '#00C878', fontSize: 11 }}>{path.basename(art)}</span>
+              <a href={`/api/elab/artifact?path=${encodeURIComponent(art)}`} download
+                className="btn-ghost-med text-xs py-0.5 px-2 flex items-center gap-1">
+                <Download size={10} /> Download
+              </a>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// Tiny path helper (avoids importing Node.js path in browser)
+const path = { basename: (p: string) => p.split(/[\\/]/).pop() ?? p };
+
+// ─── Main ELab page ──────────────────────────────────────────────────────────
+export default function ELab() {
+  const [search, setSearch]       = useState('');
+  const [domain, setDomain]       = useState('All');
+  const [selected, setSelected]   = useState<SkillMeta | null>(null);
+  const [prompt, setPrompt]       = useState('');
+  const [files, setFiles]         = useState<File[]>([]);
+  const [compliance, setCompliance] = useState<Compliance>({ audit: true, pii: false, strict: false });
+  const [running, setRunning]     = useState(false);
+  const [events, setEvents]       = useState<RunEvent[]>([]);
+  const [history, setHistory]     = useState<Array<{ skill: string; prompt: string; ts: number; success: boolean }>>([]);
+  const abortRef = useRef<(() => void) | null>(null);
+
+  const { data, isLoading } = useQuery<{ skills: SkillMeta[] }>({
+    queryKey: ['elab-skills'],
+    queryFn: () => fetch('/api/elab/skills', { credentials: 'include' }).then(r => r.json()),
+  });
+
+  const skills = data?.skills ?? [];
+  const domains = ['All', ...Array.from(new Set(skills.map(s => s.domain))).sort()];
+
+  const filtered = skills.filter(s => {
+    const matchDomain = domain === 'All' || s.domain === domain;
+    const q = search.toLowerCase();
+    const matchSearch = !q || s.name.includes(q) || s.title.toLowerCase().includes(q) || s.description.toLowerCase().includes(q);
+    return matchDomain && matchSearch;
+  });
+
+  function selectSkill(skill: SkillMeta) {
+    setSelected(skill);
+    setPrompt('');
+    setFiles([]);
+    setEvents([]);
+  }
+
+  async function runSkill() {
+    if (!selected || !prompt.trim() || running) return;
+    setRunning(true);
+    setEvents([]);
+
+    const formData = new FormData();
+    formData.append('skill', selected.name);
+    formData.append('prompt', prompt.trim());
+    formData.append('compliance_audit', String(compliance.audit));
+    formData.append('compliance_pii', String(compliance.pii));
+    formData.append('compliance_strict', String(compliance.strict));
+    for (const f of files) formData.append('files', f);
+
+    let cancelled = false;
+    let controller: AbortController | null = new AbortController();
+    abortRef.current = () => { cancelled = true; controller?.abort(); };
+
+    try {
+      const resp = await fetch('/api/elab/run', {
+        method: 'POST',
+        credentials: 'include',
+        body: formData,
+        signal: controller.signal,
+      });
+
+      if (!resp.ok) {
+        const err = await resp.json().catch(() => ({ error: 'Request failed' }));
+        setEvents([{ type: 'error', message: err.error ?? 'Request failed' }]);
+        setRunning(false);
+        return;
+      }
+
+      const reader = resp.body!.getReader();
+      const decoder = new TextDecoder();
+      let buffer = '';
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done || cancelled) break;
+        buffer += decoder.decode(value, { stream: true });
+        const parts = buffer.split('\n\n');
+        buffer = parts.pop() ?? '';
+        for (const part of parts) {
+          const lines = part.split('\n');
+          const eventLine = lines.find(l => l.startsWith('event: '));
+          const dataLine  = lines.find(l => l.startsWith('data: '));
+          if (!eventLine || !dataLine) continue;
+          const eventType = eventLine.slice(7).trim() as RunEvent['type'];
+          try {
+            const payload = JSON.parse(dataLine.slice(6));
+            setEvents(prev => [...prev, { type: eventType, ...payload }]);
+            if (eventType === 'done') {
+              setHistory(h => [{ skill: selected.name, prompt: prompt.slice(0, 80), ts: Date.now(), success: payload.success }, ...h.slice(0, 19)]);
+            }
+          } catch { /* ok */ }
+        }
+      }
+    } catch (err: any) {
+      if (!cancelled) {
+        setEvents(prev => [...prev, { type: 'error', message: err.message ?? 'Connection error' }]);
+      }
+    } finally {
+      setRunning(false);
+      abortRef.current = null;
+    }
+  }
+
+  function stopRun() {
+    abortRef.current?.();
+    setRunning(false);
+    setEvents(prev => [...prev, { type: 'system', message: 'Run cancelled by user' }]);
+  }
+
+  const cfg = selected ? (DOMAIN_CONFIG[selected.domain] ?? DOMAIN_CONFIG['General']) : null;
+
+  return (
+    <div className="flex gap-0 h-full" style={{ height: 'calc(100vh - 112px)' }}>
+
+      {/* ── Left: Skill Catalog ───────────────────────────────── */}
+      <div className="w-64 shrink-0 flex flex-col gap-3 pr-4 overflow-hidden">
+        <div>
+          <div className="flex items-center gap-2 mb-3">
+            <FlaskConical size={15} style={{ color: '#00B8CC' }} />
+            <h1 className="font-bold text-sm" style={{ color: '#E8EEF6' }}>E-LAB</h1>
+            <span className="ml-auto text-3xs px-2 py-0.5 rounded-full font-mono"
+              style={{ background: 'rgba(0,184,204,0.12)', color: '#00B8CC', border: '1px solid rgba(0,184,204,0.2)', fontSize: 10 }}>
+              {skills.length} skills
+            </span>
+          </div>
+
+          {/* Search */}
+          <div className="relative mb-2">
+            <Search size={11} className="absolute left-2.5 top-1/2 -translate-y-1/2" style={{ color: 'var(--text-muted)' }} />
+            <input
+              value={search} onChange={e => setSearch(e.target.value)}
+              placeholder="Search skills…"
+              className="input-med w-full pl-7 text-xs py-1.5"
+              style={{ fontSize: 12 }}
+            />
+          </div>
+
+          {/* Domain filters */}
+          <div className="flex flex-wrap gap-1">
+            {domains.map(d => {
+              const dcfg = d !== 'All' ? DOMAIN_CONFIG[d] : null;
+              return (
+                <button
+                  key={d}
+                  onClick={() => setDomain(d)}
+                  className="text-3xs px-2 py-0.5 rounded-full transition-all"
+                  style={{
+                    fontSize: 10,
+                    background: domain === d ? (dcfg?.color ?? '#00B8CC') + '20' : 'rgba(255,255,255,0.04)',
+                    color: domain === d ? (dcfg?.color ?? '#00B8CC') : 'var(--text-muted)',
+                    border: `1px solid ${domain === d ? (dcfg?.color ?? '#00B8CC') + '40' : 'rgba(255,255,255,0.06)'}`,
+                  }}
+                >
+                  {d}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Skill list */}
+        <div className="flex-1 overflow-y-auto space-y-0.5 pr-1">
+          {isLoading
+            ? Array.from({ length: 8 }).map((_, i) => <div key={i} className="skel h-10 rounded-xl" style={{ animationDelay: `${i * 0.07}s` }} />)
+            : filtered.length === 0
+              ? <p className="text-xs text-center py-8" style={{ color: 'var(--text-muted)' }}>No skills match</p>
+              : filtered.map(s => (
+                <SkillListItem key={s.name} skill={s} active={selected?.name === s.name} onClick={() => selectSkill(s)} />
+              ))
+          }
+        </div>
+
+        {/* Run history */}
+        {history.length > 0 && (
+          <div style={{ borderTop: '1px solid var(--border)', paddingTop: 8 }}>
+            <p className="text-3xs mb-1.5 font-semibold" style={{ color: 'var(--text-muted)', fontSize: 10, letterSpacing: '0.06em' }}>RECENT RUNS</p>
+            <div className="space-y-1">
+              {history.slice(0, 5).map((h, i) => (
+                <div key={i} className="flex items-center gap-1.5 text-3xs" style={{ fontSize: 10 }}>
+                  <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${h.success ? 'dot-online' : 'dot-danger'}`} />
+                  <span className="font-mono truncate" style={{ color: 'var(--text-muted)' }}>{h.skill}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* ── Right: Lab Workspace ──────────────────────────────── */}
+      <div className="flex-1 flex gap-4 overflow-hidden min-w-0">
+
+        {!selected ? (
+          <div className="flex-1 flex flex-col items-center justify-center gap-4" style={{ color: 'var(--text-muted)' }}>
+            <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="text-center space-y-3">
+              <FlaskConical size={56} className="mx-auto opacity-10" />
+              <p className="text-base font-semibold" style={{ color: '#E8EEF6' }}>Select a skill to begin</p>
+              <p className="text-sm max-w-xs">Choose from {skills.length} specialist skills on the left, then enter your prompt and run the analysis.</p>
+            </motion.div>
+          </div>
+        ) : (
+          <>
+            {/* Config panel */}
+            <div className="w-80 shrink-0 flex flex-col gap-4 overflow-y-auto">
+
+              {/* Skill header */}
+              <div className="glass p-4 relative overflow-hidden">
+                <div className="absolute top-0 left-0 right-0 h-[2px]"
+                  style={{ background: `linear-gradient(90deg, transparent, ${cfg!.color}, transparent)` }} />
+                <div className="flex items-start gap-3">
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
+                    style={{ background: `${cfg!.color}15`, color: cfg!.color, border: `1px solid ${cfg!.color}25` }}>
+                    {cfg!.icon}
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <p className="font-mono text-xs font-bold truncate" style={{ color: cfg!.color, fontSize: 11 }}>{selected.name}</p>
+                    <p className="font-semibold text-sm" style={{ color: '#E8EEF6' }}>{selected.title}</p>
+                    {selected.description && (
+                      <p className="text-xs mt-0.5 line-clamp-2 leading-relaxed" style={{ color: 'var(--text-muted)' }}>{selected.description}</p>
+                    )}
+                  </div>
+                </div>
+
+                {/* Capabilities */}
+                {selected.capabilities.length > 0 && (
+                  <div className="mt-3 flex flex-wrap gap-1">
+                    {selected.capabilities.slice(0, 6).map(c => (
+                      <span key={c} className="text-3xs px-1.5 py-0.5 rounded"
+                        style={{ background: `${cfg!.color}10`, color: cfg!.color, border: `1px solid ${cfg!.color}20`, fontSize: 9 }}>
+                        {c}
+                      </span>
+                    ))}
+                  </div>
+                )}
+
+                {/* Stats */}
+                <div className="mt-3 flex items-center gap-4 text-3xs" style={{ fontSize: 10, borderTop: '1px solid var(--border)', paddingTop: 8 }}>
+                  <span style={{ color: 'var(--text-muted)' }}>
+                    <span style={{ color: '#E8EEF6', fontWeight: 600 }}>{selected.stats.invocations}</span> runs
+                  </span>
+                  <span style={{ color: 'var(--text-muted)' }}>
+                    <span style={{ color: '#E8EEF6', fontWeight: 600 }}>{selected.stats.avg_latency}</span>ms avg
+                  </span>
+                  <span style={{ color: '#00C878', fontWeight: 600 }}>
+                    {(selected.stats.success_rate).toFixed(0)}% success
+                  </span>
+                </div>
+              </div>
+
+              {/* Prompt input */}
+              <GlassCard className="space-y-2">
+                <label className="text-xs font-semibold" style={{ color: 'var(--text-muted)', letterSpacing: '0.05em' }}>
+                  TASK / PROMPT
+                </label>
+                <textarea
+                  value={prompt}
+                  onChange={e => setPrompt(e.target.value)}
+                  placeholder={selected.inputHint}
+                  rows={5}
+                  className="input-med w-full text-xs resize-none leading-relaxed"
+                  style={{ fontSize: 12, fontFamily: 'var(--font-sans)' }}
+                  onKeyDown={e => { if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') runSkill(); }}
+                />
+                <p className="text-3xs" style={{ color: 'var(--text-muted)', fontSize: 10 }}>
+                  <kbd className="font-mono px-1 py-0.5 rounded" style={{ background: 'rgba(255,255,255,0.06)' }}>⌘↵</kbd> to run
+                </p>
+              </GlassCard>
+
+              {/* File upload */}
+              <GlassCard className="space-y-2">
+                <label className="text-xs font-semibold" style={{ color: 'var(--text-muted)', letterSpacing: '0.05em' }}>
+                  DOCUMENTS & FILES
+                </label>
+                <FileDropZone files={files} onChange={setFiles} />
+              </GlassCard>
+
+              {/* Compliance */}
+              <GlassCard className="space-y-2">
+                <div className="flex items-center gap-2">
+                  <Shield size={12} style={{ color: '#FFB300' }} />
+                  <label className="text-xs font-semibold" style={{ color: 'var(--text-muted)', letterSpacing: '0.05em' }}>
+                    COMPLIANCE
+                  </label>
+                </div>
+                <CompliancePanel value={compliance} onChange={setCompliance} />
+              </GlassCard>
+
+              {/* Run / Stop */}
+              <div className="flex gap-2 pb-2">
+                {running ? (
+                  <button
+                    onClick={stopRun}
+                    className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl text-sm font-semibold transition-all"
+                    style={{ background: 'rgba(255,23,68,0.1)', color: '#FF1744', border: '1px solid rgba(255,23,68,0.25)' }}
+                  >
+                    <Square size={14} /> Stop Run
+                  </button>
+                ) : (
+                  <button
+                    onClick={runSkill}
+                    disabled={!prompt.trim()}
+                    className="btn-med flex-1 flex items-center justify-center gap-2 py-2.5 text-sm font-semibold"
+                    style={{ opacity: prompt.trim() ? 1 : 0.4 }}
+                  >
+                    <Play size={14} /> Run Skill
+                    <span className="ml-auto text-3xs font-mono opacity-60" style={{ fontSize: 10 }}>
+                      {selected.name.split('-').pop()}
+                    </span>
+                  </button>
+                )}
+                <button
+                  onClick={() => { setPrompt(''); setFiles([]); setEvents([]); }}
+                  className="btn-ghost-med p-2.5 rounded-xl"
+                  title="Clear"
+                >
+                  <RotateCcw size={14} />
+                </button>
+              </div>
+            </div>
+
+            {/* Output panel */}
+            <div className="flex-1 flex flex-col gap-3 overflow-hidden min-w-0">
+              <div className="flex items-center gap-2">
+                <Activity size={13} style={{ color: '#00B8CC' }} />
+                <h2 className="section-heading">Live Output</h2>
+                <span className="text-3xs px-2 py-0.5 rounded-full font-mono ml-1"
+                  style={{ background: 'rgba(0,184,204,0.1)', color: '#00B8CC', border: '1px solid rgba(0,184,204,0.2)', fontSize: 10 }}>
+                  {selected.name}
+                </span>
+              </div>
+
+              <div
+                className="flex-1 glass flex flex-col p-4 overflow-hidden"
+                style={{ border: running ? '1px solid rgba(0,184,204,0.25)' : undefined }}
+              >
+                <OutputPanel events={events} running={running} />
+              </div>
+
+              {/* Info strip */}
+              <div className="flex items-center gap-4 text-3xs px-1" style={{ color: 'var(--text-muted)', fontSize: 10 }}>
+                <Info size={9} />
+                <span>Runs execute in an isolated Docker container with read-only skill context</span>
+                {compliance.audit && (
+                  <span className="flex items-center gap-1 ml-auto" style={{ color: '#00C878' }}>
+                    <ShieldCheck size={9} /> Audit trail active
+                  </span>
+                )}
+              </div>
+            </div>
+          </>
+        )}
+      </div>
+    </div>
+  );
+}

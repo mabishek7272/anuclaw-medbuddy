@@ -1,0 +1,13 @@
+streamlit
+pandas
+numpy
+tensorflow
+scikit-learn
+matplotlib
+plotly
+seaborn
+shap
+requests
+pyvis
+py3Dmol
+networkx

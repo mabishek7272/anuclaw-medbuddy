@@ -1,0 +1,248 @@
+{
+  "molecules": [
+    {
+      "atc_classifications": [
+        "L01XK01"
+      ],
+      "availability_type": 1,
+      "biotherapeutic": null,
+      "black_box_warning": 0,
+      "chemical_probe": 1,
+      "chirality": 2,
+      "cross_references": [
+        {
+          "xref_id": "human/EPAR/lynparza",
+          "xref_name": "lynparza",
+          "xref_src": "EMA"
+        },
+        {
+          "xref_id": "olaparib",
+          "xref_name": "olaparib",
+          "xref_src": "DailyMed"
+        }
+      ],
+      "dosed_ingredient": true,
+      "first_approval": 2014,
+      "first_in_class": 1,
+      "helm_notation": null,
+      "inorganic_flag": 0,
+      "max_phase": "4.0",
+      "molecule_chembl_id": "CHEMBL521686",
+      "molecule_hierarchy": {
+        "active_chembl_id": "CHEMBL521686",
+        "molecule_chembl_id": "CHEMBL521686",
+        "parent_chembl_id": "CHEMBL521686"
+      },
+      "molecule_properties": {
+        "alogp": "2.35",
+        "aromatic_rings": 3,
+        "full_molformula": "C24H23FN4O3",
+        "full_mwt": "434.47",
+        "hba": 4,
+        "hbd": 1,
+        "heavy_atoms": 32,
+        "mw_freebase": "434.47",
+        "np_likeness_score": "-1.61",
+        "num_ro5_violations": 0,
+        "psa": "86.37",
+        "qed_weighted": "0.68",
+        "ro3_pass": "N",
+        "rtb": 4
+      },
+      "molecule_structures": {
+        "canonical_smiles": "O=C(c1cc(Cc2n[nH]c(=O)c3ccccc23)ccc1F)N1CCN(C(=O)C2CC2)CC1",
+        "molfile": "\n     RDKit          2D\n\n 32 36  0  0  0  0  0  0  0  0999 V2000\n    3.9904   -4.4079    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    4.7049   -4.8204    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n    3.9904   -3.5829    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    3.2759   -3.1704    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    2.5615   -3.5829    0.0000 F   0  0  0  0  0  0  0  0  0  0  0  0\n    3.2759   -2.3454    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    3.9904   -1.9329    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    4.7049   -2.3454    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    6.1338   -0.6954    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    5.4193   -1.1079    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    6.8483   -1.1079    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    7.5627   -0.6954    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    7.5627    0.1296    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    6.8483    0.5421    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    6.1338    0.1296    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    5.4193    0.5421    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    5.4193    1.3671    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n    4.7049    0.1296    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n    4.7049   -0.6954    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n    5.4193   -1.9329    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    4.7049   -3.1704    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    3.2759   -4.8204    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n    6.1338   -5.6454    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n    5.4193   -6.0579    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    4.7049   -5.6454    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    8.3877   -5.6454    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    7.5627   -5.6454    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    6.8483   -6.8829    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n    6.8483   -6.0579    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    7.9752   -4.9310    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    6.1338   -4.8204    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    5.4193   -4.4079    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n  1  2  1  0\n  1  3  1  0\n  3  4  2  0\n  3 21  1  0\n  4  5  1  0\n  4  6  1  0\n  6  7  2  0\n  8  7  1  0\n  8 20  1  0\n  9 10  1  0\n  9 15  2  0\n 10 19  2  0\n 11  9  1  0\n 12 11  2  0\n 12 13  1  0\n 13 14  2  0\n 15 14  1  0\n 15 16  1  0\n 16 17  2  0\n 18 16  1  0\n 19 18  1  0\n 20 10  1  0\n 21  8  2  0\n 22  1  2  0\n 23 24  1  0\n 25  2  1  0\n 25 24  1  0\n 26 27  1  0\n 27 30  1  0\n 28 29  2  0\n 29 23  1  0\n 29 27  1  0\n 30 26  1  0\n 31 23  1  0\n 31 32  1  0\n 32  2  1  0\nM  END\n> <chembl_id>\nCHEMBL521686\n\n> <chembl_pref_name>\nOLAPARIB",
+        "standard_inchi": "InChI=1S/C24H23FN4O3/c25-20-8-5-15(14-21-17-3-1-2-4-18(17)22(30)27-26-21)13-19(20)24(32)29-11-9-28(10-12-29)23(31)16-6-7-16/h1-5,8,13,16H,6-7,9-12,14H2,(H,27,30)",
+        "standard_inchi_key": "FDLYAMZZIXQODN-UHFFFAOYSA-N"
+      },
+      "molecule_synonyms": [
+        {
+          "molecule_synonym": "AZ-2281",
+          "syn_type": "PND",
+          "synonyms": "AZ-2281"
+        },
+        {
+          "molecule_synonym": "AZ-2281",
+          "syn_type": "RESEARCH_CODE",
+          "synonyms": "AZ-2281"
+        },
+        {
+          "molecule_synonym": "AZ2281",
+          "syn_type": "PND",
+          "synonyms": "AZ2281"
+        },
+        {
+          "molecule_synonym": "AZ2281",
+          "syn_type": "RESEARCH_CODE",
+          "synonyms": "AZ2281"
+        },
+        {
+          "molecule_synonym": "AZD 2281",
+          "syn_type": "PND",
+          "synonyms": "AZD 2281"
+        },
+        {
+          "molecule_synonym": "AZD-2281",
+          "syn_type": "PND",
+          "synonyms": "AZD-2281"
+        },
+        {
+          "molecule_synonym": "AZD-2281",
+          "syn_type": "RESEARCH_CODE",
+          "synonyms": "AZD-2281"
+        },
+        {
+          "molecule_synonym": "AZD2281",
+          "syn_type": "PND",
+          "synonyms": "AZD2281"
+        },
+        {
+          "molecule_synonym": "AZD2281",
+          "syn_type": "RESEARCH_CODE",
+          "synonyms": "AZD2281"
+        },
+        {
+          "molecule_synonym": "KU-0059436",
+          "syn_type": "PND",
+          "synonyms": "KU-0059436"
+        },
+        {
+          "molecule_synonym": "KU-0059436",
+          "syn_type": "RESEARCH_CODE",
+          "synonyms": "KU-0059436"
+        },
+        {
+          "molecule_synonym": "KU0059436",
+          "syn_type": "PND",
+          "synonyms": "KU0059436"
+        },
+        {
+          "molecule_synonym": "KU-59436",
+          "syn_type": "PND",
+          "synonyms": "KU-59436"
+        },
+        {
+          "molecule_synonym": "KU-59436",
+          "syn_type": "RESEARCH_CODE",
+          "synonyms": "KU-59436"
+        },
+        {
+          "molecule_synonym": "LYNPARZA",
+          "syn_type": "PND",
+          "synonyms": "LYNPARZA"
+        },
+        {
+          "molecule_synonym": "Lynparza",
+          "syn_type": "TRADE_NAME",
+          "synonyms": "LYNPARZA"
+        },
+        {
+          "molecule_synonym": "NSC-747856",
+          "syn_type": "PND",
+          "synonyms": "NSC-747856"
+        },
+        {
+          "molecule_synonym": "NSC-747856",
+          "syn_type": "RESEARCH_CODE",
+          "synonyms": "NSC-747856"
+        },
+        {
+          "molecule_synonym": "Olaparib",
+          "syn_type": "ATC",
+          "synonyms": "OLAPARIB"
+        },
+        {
+          "molecule_synonym": "Olaparib",
+          "syn_type": "BNF",
+          "synonyms": "OLAPARIB"
+        },
+        {
+          "molecule_synonym": "Olaparib",
+          "syn_type": "EMA",
+          "synonyms": "OLAPARIB"
+        },
+        {
+          "molecule_synonym": "Olaparib",
+          "syn_type": "FDA",
+          "synonyms": "OLAPARIB"
+        },
+        {
+          "molecule_synonym": "Olaparib",
+          "syn_type": "INN",
+          "synonyms": "OLAPARIB"
+        },
+        {
+          "molecule_synonym": "Olaparib",
+          "syn_type": "JAN",
+          "synonyms": "OLAPARIB"
+        },
+        {
+          "molecule_synonym": "Olaparib",
+          "syn_type": "MERCK_INDEX",
+          "synonyms": "OLAPARIB"
+        },
+        {
+          "molecule_synonym": "Olaparib",
+          "syn_type": "OTHER",
+          "synonyms": "OLAPARIB"
+        },
+        {
+          "molecule_synonym": "OLAPARIB",
+          "syn_type": "PND",
+          "synonyms": "OLAPARIB"
+        },
+        {
+          "molecule_synonym": "Olaparib",
+          "syn_type": "USAN",
+          "synonyms": "OLAPARIB"
+        },
+        {
+          "molecule_synonym": "OLAPARIB (AZD2281)",
+          "syn_type": "PND",
+          "synonyms": "Olaparib (AZD2281)"
+        },
+        {
+          "molecule_synonym": "OLAPARIBAZD-2281AZD 2281KU 59436KU-59436LYNPARZAAZD2281KU59436O-9201",
+          "syn_type": "PND",
+          "synonyms": "OlaparibAZD-2281AZD 2281KU 59436KU-59436LynparzaAZD2281KU59436O-9201"
+        },
+        {
+          "molecule_synonym": "OLAPARIB COMPONENT OF KEYLYNK-010",
+          "syn_type": "PND",
+          "synonyms": "OLAPARIB COMPONENT OF KEYLYNK-010"
+        },
+        {
+          "molecule_synonym": "OLAPARIB COMPONENT OF KEYLYNK-010",
+          "syn_type": "RESEARCH_CODE",
+          "synonyms": "OLAPARIB COMPONENT OF KEYLYNK-010"
+        }
+      ],
+      "molecule_type": "Small molecule",
+      "natural_product": 0,
+      "oral": true,
+      "orphan": 0,
+      "parenteral": false,
+      "polymer_flag": 0,
+      "pref_name": "OLAPARIB",
+      "prodrug": 0,
+      "score": 39.0,
+      "structure_type": "MOL",
+      "therapeutic_flag": true,
+      "topical": false,
+      "usan_stem": "-parib",
+      "usan_stem_definition": "poly-ADP-ribose polymerase inhibitors",
+      "usan_substem": "-parib",
+      "usan_year": 2013,
+      "veterinary": 0,
+      "withdrawn_flag": false
+    }
+  ],
+  "page_meta": {
+    "limit": 1,
+    "next": "/chembl/api/data/molecule/search.json?limit=1&offset=1&q=Olaparib",
+    "offset": 0,
+    "previous": null,
+    "total_count": 2
+  },
+  "_license_notice": "Data from the ChEMBL Database. Please review the licensing terms at https://www.ebi.ac.uk/chembl/"
+}

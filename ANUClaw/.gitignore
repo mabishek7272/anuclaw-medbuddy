@@ -1,0 +1,17 @@
+node_modules/
+dist/
+.env
+*.db
+*.db-shm
+*.db-wal
+.whatsapp-auth/
+workspace/
+logs/
+groups/*/AGENTS.md
+groups/*/*.json
+groups/*/output/
+*.pem
+*.key
+*.cert
+.DS_Store
+Thumbs.db

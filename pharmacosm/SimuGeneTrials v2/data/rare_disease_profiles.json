@@ -1,0 +1,26 @@
+[
+  {
+    "disease_name": "Lyron Syndrome",
+    "genetic_markers": ["LYR1", "TP53", "MUTYH"],
+    "estimated_prevalence": "1 in 12 million",
+    "symptoms": ["neurovascular instability", "impaired DNA repair", "immune collapse"],
+    "known_drugs": ["experimental compound LY-α2"],
+    "experimental_efficacy": 0.42
+  },
+  {
+    "disease_name": "HMP Virus-Induced Myopathy",
+    "genetic_markers": ["HMPV-G", "LMNA", "MYO5C"],
+    "estimated_prevalence": "unclassified pandemic threat",
+    "symptoms": ["muscle degradation", "immune suppression", "sleep cycle breakdown"],
+    "known_drugs": ["immune-modulator X-29"],
+    "experimental_efficacy": 0.31
+  },
+  {
+    "disease_name": "Neuro-Quantum Interference Disorder (NQID)",
+    "genetic_markers": ["QNTF1", "SYN3", "NEUROD6"],
+    "estimated_prevalence": "0.000002%",
+    "symptoms": ["memory collapse", "dopamine decoherence", "episodic tremors"],
+    "known_drugs": ["Neuroclear-R", "Q-Stim"],
+    "experimental_efficacy": 0.51
+  }
+]

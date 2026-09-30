@@ -1,0 +1,14 @@
+# Core App Framework
+streamlit
+
+# Data Handling & Scientific Computing
+pandas
+numpy
+
+# 3D & 2D Visualization
+pyvista
+py3Dmol
+plotly
+
+# PDF Generation (Assuming fpdf2 or a similar library is used in your custom module)
+fpdf2

@@ -1,0 +1,926 @@
+[
+  {
+    "drug_name": "Olaparib",
+    "efficacy": 0.7,
+    "target_genes": [],
+    "toxicity_profile": {
+      "Nausea": 0.42,
+      "Fatigue": 0.65,
+      "Cardiac Risk": 0.13
+    },
+    "repair_type": "HR",
+    "approval": "FDA",
+    "mechanism": "PARP inhibitor",
+    "route": null,
+    "match_score": null,
+    "_rich": {
+      "drug_name": "Olaparib",
+      "efficacy": 0.7,
+      "target_genes": [],
+      "toxicity_profile": {
+        "Nausea": 0.42,
+        "Fatigue": 0.65,
+        "Cardiac Risk": 0.13
+      },
+      "repair_type": "HR",
+      "approval": "FDA",
+      "mechanism": "PARP inhibitor",
+      "route": null,
+      "match_score": null,
+      "_rich": {
+        "drug_name": "Olaparib",
+        "efficacy": 0.7,
+        "target_genes": [],
+        "toxicity_profile": {
+          "Nausea": 0.42,
+          "Fatigue": 0.65,
+          "Cardiac Risk": 0.13
+        },
+        "repair_type": "HR",
+        "approval": "FDA",
+        "mechanism": "PARP inhibitor",
+        "route": null,
+        "match_score": null,
+        "_rich": {
+          "drug_name": "Olaparib",
+          "efficacy": 0.7,
+          "target_genes": [],
+          "toxicity_profile": {
+            "Nausea": 0.42,
+            "Fatigue": 0.65,
+            "Cardiac Risk": 0.13
+          },
+          "repair_type": "HR",
+          "approval": "FDA",
+          "mechanism": "PARP inhibitor",
+          "route": null,
+          "match_score": null,
+          "_rich": {
+            "drug_name": "Olaparib",
+            "efficacy": 0.7,
+            "target_genes": [],
+            "toxicity_profile": {
+              "Nausea": 0.42,
+              "Fatigue": 0.65,
+              "Cardiac Risk": 0.13
+            },
+            "repair_type": "HR",
+            "approval": "FDA",
+            "mechanism": "PARP inhibitor",
+            "route": null,
+            "match_score": null,
+            "_rich": {
+              "drug_name": "Olaparib",
+              "efficacy": 0.7,
+              "target_genes": [],
+              "toxicity_profile": {
+                "Nausea": 0.42,
+                "Fatigue": 0.65,
+                "Cardiac Risk": 0.13
+              },
+              "repair_type": "HR",
+              "approval": "FDA",
+              "mechanism": "PARP inhibitor",
+              "route": null,
+              "match_score": null,
+              "_rich": {
+                "drug_name": "Olaparib",
+                "efficacy": 0.7,
+                "target_genes": [],
+                "toxicity_profile": {
+                  "Nausea": 0.42,
+                  "Fatigue": 0.65,
+                  "Cardiac Risk": 0.13
+                },
+                "repair_type": "HR",
+                "approval": "FDA",
+                "mechanism": "PARP inhibitor",
+                "route": null,
+                "match_score": null,
+                "_rich": {
+                  "drug_name": "Olaparib",
+                  "efficacy": 0.7,
+                  "target_genes": [],
+                  "toxicity_profile": {
+                    "Nausea": 0.42,
+                    "Fatigue": 0.65,
+                    "Cardiac Risk": 0.13
+                  },
+                  "repair_type": "HR",
+                  "approval": "FDA",
+                  "mechanism": "PARP inhibitor",
+                  "route": null,
+                  "match_score": null,
+                  "_rich": {
+                    "drug_name": "Olaparib",
+                    "efficacy": 0.7,
+                    "target_genes": [],
+                    "toxicity_profile": {
+                      "Nausea": 0.42,
+                      "Fatigue": 0.65,
+                      "Cardiac Risk": 0.13
+                    },
+                    "repair_type": "HR",
+                    "approval": "FDA",
+                    "mechanism": "PARP inhibitor",
+                    "route": null,
+                    "match_score": null,
+                    "_rich": {
+                      "drug_name": "Olaparib",
+                      "efficacy": 0.7,
+                      "target_genes": [],
+                      "toxicity_profile": {
+                        "Nausea": 0.42,
+                        "Fatigue": 0.65,
+                        "Cardiac Risk": 0.13
+                      },
+                      "repair_type": "HR",
+                      "approval": "FDA",
+                      "mechanism": "PARP inhibitor",
+                      "route": null,
+                      "match_score": null,
+                      "_rich": {
+                        "drug_name": "Olaparib",
+                        "efficacy": 0.7,
+                        "target_genes": [],
+                        "toxicity_profile": {
+                          "Nausea": 0.42,
+                          "Fatigue": 0.65,
+                          "Cardiac Risk": 0.13
+                        },
+                        "repair_type": "HR",
+                        "approval": "FDA",
+                        "mechanism": "PARP inhibitor",
+                        "route": null,
+                        "match_score": null,
+                        "_rich": {
+                          "drug_name": "Olaparib",
+                          "efficacy": 0.7,
+                          "target_genes": [],
+                          "toxicity_profile": {
+                            "Nausea": 0.42,
+                            "Fatigue": 0.65,
+                            "Cardiac Risk": 0.13
+                          },
+                          "repair_type": "HR",
+                          "approval": "FDA",
+                          "mechanism": "PARP inhibitor",
+                          "route": null,
+                          "match_score": null,
+                          "_rich": {
+                            "drug_name": "Olaparib",
+                            "efficacy": 0.7,
+                            "target_genes": [],
+                            "toxicity_profile": {
+                              "Nausea": 0.42,
+                              "Fatigue": 0.65,
+                              "Cardiac Risk": 0.13
+                            },
+                            "repair_type": "HR",
+                            "approval": "FDA",
+                            "mechanism": "PARP inhibitor",
+                            "route": null,
+                            "match_score": null,
+                            "_rich": {
+                              "drug_name": "Olaparib",
+                              "efficacy": 0.7,
+                              "target_genes": [],
+                              "toxicity_profile": {
+                                "Nausea": 0.42,
+                                "Fatigue": 0.65,
+                                "Cardiac Risk": 0.13
+                              },
+                              "repair_type": "HR",
+                              "approval": "FDA",
+                              "mechanism": "PARP inhibitor",
+                              "route": null,
+                              "match_score": null,
+                              "_rich": {
+                                "drug_name": "Olaparib",
+                                "efficacy": 0.7,
+                                "target_genes": [],
+                                "toxicity_profile": {
+                                  "Nausea": 0.42,
+                                  "Fatigue": 0.65,
+                                  "Cardiac Risk": 0.13
+                                },
+                                "repair_type": "HR",
+                                "approval": "FDA",
+                                "mechanism": "PARP inhibitor",
+                                "route": null,
+                                "match_score": null,
+                                "_rich": {
+                                  "drug_name": "Olaparib",
+                                  "efficacy": 0.7,
+                                  "target_genes": [],
+                                  "toxicity_profile": {
+                                    "Nausea": 0.42,
+                                    "Fatigue": 0.65,
+                                    "Cardiac Risk": 0.13
+                                  },
+                                  "repair_type": "HR",
+                                  "approval": "FDA",
+                                  "mechanism": "PARP inhibitor",
+                                  "route": null,
+                                  "match_score": null,
+                                  "_rich": {
+                                    "drug_name": "Olaparib",
+                                    "efficacy": 0.7,
+                                    "target_genes": [],
+                                    "toxicity_profile": {
+                                      "Nausea": 0.42,
+                                      "Fatigue": 0.65,
+                                      "Cardiac Risk": 0.13
+                                    },
+                                    "repair_type": "HR",
+                                    "approval": "FDA",
+                                    "mechanism": "PARP inhibitor",
+                                    "route": null,
+                                    "match_score": null,
+                                    "_rich": {
+                                      "drug_name": "Olaparib",
+                                      "efficacy": 0.7,
+                                      "target_genes": [],
+                                      "toxicity_profile": {
+                                        "Nausea": 0.42,
+                                        "Fatigue": 0.65,
+                                        "Cardiac Risk": 0.13
+                                      },
+                                      "repair_type": "HR",
+                                      "approval": "FDA",
+                                      "mechanism": "PARP inhibitor",
+                                      "route": null,
+                                      "match_score": null,
+                                      "_rich": {
+                                        "drug_name": "Olaparib",
+                                        "efficacy": 0.7,
+                                        "target_genes": [
+                                          "BRCA1",
+                                          "BRCA2",
+                                          "RAD51"
+                                        ],
+                                        "toxicity_profile": {
+                                          "Nausea": 0.42,
+                                          "Fatigue": 0.65,
+                                          "Cardiac Risk": 0.13
+                                        },
+                                        "repair_type": "HR",
+                                        "approval": "FDA",
+                                        "mechanism": "PARP inhibitor",
+                                        "route": null,
+                                        "match_score": null,
+                                        "_rich": {
+                                          "drug_name": "Olaparib",
+                                          "repair_type": "HR",
+                                          "match_score": 0.92,
+                                          "approval": "FDA",
+                                          "efficacy_range": [
+                                            0.75,
+                                            0.95
+                                          ],
+                                          "mechanism": "PARP inhibitor",
+                                          "targets": [
+                                            "BRCA1",
+                                            "BRCA2",
+                                            "RAD51"
+                                          ],
+                                          "toxicity_profile": {
+                                            "Nausea": 0.42,
+                                            "Fatigue": 0.65,
+                                            "Cardiac Risk": 0.13
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "drug_name": "Pembrolizumab",
+    "efficacy": 0.7,
+    "target_genes": [],
+    "toxicity_profile": {
+      "Immune-related AE": 0.36,
+      "Thyroiditis": 0.28,
+      "Skin Rash": 0.33
+    },
+    "repair_type": "NER",
+    "approval": "Trial",
+    "mechanism": "PD-1 immune checkpoint inhibitor",
+    "route": null,
+    "match_score": null,
+    "_rich": {
+      "drug_name": "Pembrolizumab",
+      "efficacy": 0.7,
+      "target_genes": [],
+      "toxicity_profile": {
+        "Immune-related AE": 0.36,
+        "Thyroiditis": 0.28,
+        "Skin Rash": 0.33
+      },
+      "repair_type": "NER",
+      "approval": "Trial",
+      "mechanism": "PD-1 immune checkpoint inhibitor",
+      "route": null,
+      "match_score": null,
+      "_rich": {
+        "drug_name": "Pembrolizumab",
+        "efficacy": 0.7,
+        "target_genes": [],
+        "toxicity_profile": {
+          "Immune-related AE": 0.36,
+          "Thyroiditis": 0.28,
+          "Skin Rash": 0.33
+        },
+        "repair_type": "NER",
+        "approval": "Trial",
+        "mechanism": "PD-1 immune checkpoint inhibitor",
+        "route": null,
+        "match_score": null,
+        "_rich": {
+          "drug_name": "Pembrolizumab",
+          "efficacy": 0.7,
+          "target_genes": [],
+          "toxicity_profile": {
+            "Immune-related AE": 0.36,
+            "Thyroiditis": 0.28,
+            "Skin Rash": 0.33
+          },
+          "repair_type": "NER",
+          "approval": "Trial",
+          "mechanism": "PD-1 immune checkpoint inhibitor",
+          "route": null,
+          "match_score": null,
+          "_rich": {
+            "drug_name": "Pembrolizumab",
+            "efficacy": 0.7,
+            "target_genes": [],
+            "toxicity_profile": {
+              "Immune-related AE": 0.36,
+              "Thyroiditis": 0.28,
+              "Skin Rash": 0.33
+            },
+            "repair_type": "NER",
+            "approval": "Trial",
+            "mechanism": "PD-1 immune checkpoint inhibitor",
+            "route": null,
+            "match_score": null,
+            "_rich": {
+              "drug_name": "Pembrolizumab",
+              "efficacy": 0.7,
+              "target_genes": [],
+              "toxicity_profile": {
+                "Immune-related AE": 0.36,
+                "Thyroiditis": 0.28,
+                "Skin Rash": 0.33
+              },
+              "repair_type": "NER",
+              "approval": "Trial",
+              "mechanism": "PD-1 immune checkpoint inhibitor",
+              "route": null,
+              "match_score": null,
+              "_rich": {
+                "drug_name": "Pembrolizumab",
+                "efficacy": 0.7,
+                "target_genes": [],
+                "toxicity_profile": {
+                  "Immune-related AE": 0.36,
+                  "Thyroiditis": 0.28,
+                  "Skin Rash": 0.33
+                },
+                "repair_type": "NER",
+                "approval": "Trial",
+                "mechanism": "PD-1 immune checkpoint inhibitor",
+                "route": null,
+                "match_score": null,
+                "_rich": {
+                  "drug_name": "Pembrolizumab",
+                  "efficacy": 0.7,
+                  "target_genes": [],
+                  "toxicity_profile": {
+                    "Immune-related AE": 0.36,
+                    "Thyroiditis": 0.28,
+                    "Skin Rash": 0.33
+                  },
+                  "repair_type": "NER",
+                  "approval": "Trial",
+                  "mechanism": "PD-1 immune checkpoint inhibitor",
+                  "route": null,
+                  "match_score": null,
+                  "_rich": {
+                    "drug_name": "Pembrolizumab",
+                    "efficacy": 0.7,
+                    "target_genes": [],
+                    "toxicity_profile": {
+                      "Immune-related AE": 0.36,
+                      "Thyroiditis": 0.28,
+                      "Skin Rash": 0.33
+                    },
+                    "repair_type": "NER",
+                    "approval": "Trial",
+                    "mechanism": "PD-1 immune checkpoint inhibitor",
+                    "route": null,
+                    "match_score": null,
+                    "_rich": {
+                      "drug_name": "Pembrolizumab",
+                      "efficacy": 0.7,
+                      "target_genes": [],
+                      "toxicity_profile": {
+                        "Immune-related AE": 0.36,
+                        "Thyroiditis": 0.28,
+                        "Skin Rash": 0.33
+                      },
+                      "repair_type": "NER",
+                      "approval": "Trial",
+                      "mechanism": "PD-1 immune checkpoint inhibitor",
+                      "route": null,
+                      "match_score": null,
+                      "_rich": {
+                        "drug_name": "Pembrolizumab",
+                        "efficacy": 0.7,
+                        "target_genes": [],
+                        "toxicity_profile": {
+                          "Immune-related AE": 0.36,
+                          "Thyroiditis": 0.28,
+                          "Skin Rash": 0.33
+                        },
+                        "repair_type": "NER",
+                        "approval": "Trial",
+                        "mechanism": "PD-1 immune checkpoint inhibitor",
+                        "route": null,
+                        "match_score": null,
+                        "_rich": {
+                          "drug_name": "Pembrolizumab",
+                          "efficacy": 0.7,
+                          "target_genes": [],
+                          "toxicity_profile": {
+                            "Immune-related AE": 0.36,
+                            "Thyroiditis": 0.28,
+                            "Skin Rash": 0.33
+                          },
+                          "repair_type": "NER",
+                          "approval": "Trial",
+                          "mechanism": "PD-1 immune checkpoint inhibitor",
+                          "route": null,
+                          "match_score": null,
+                          "_rich": {
+                            "drug_name": "Pembrolizumab",
+                            "efficacy": 0.7,
+                            "target_genes": [],
+                            "toxicity_profile": {
+                              "Immune-related AE": 0.36,
+                              "Thyroiditis": 0.28,
+                              "Skin Rash": 0.33
+                            },
+                            "repair_type": "NER",
+                            "approval": "Trial",
+                            "mechanism": "PD-1 immune checkpoint inhibitor",
+                            "route": null,
+                            "match_score": null,
+                            "_rich": {
+                              "drug_name": "Pembrolizumab",
+                              "efficacy": 0.7,
+                              "target_genes": [],
+                              "toxicity_profile": {
+                                "Immune-related AE": 0.36,
+                                "Thyroiditis": 0.28,
+                                "Skin Rash": 0.33
+                              },
+                              "repair_type": "NER",
+                              "approval": "Trial",
+                              "mechanism": "PD-1 immune checkpoint inhibitor",
+                              "route": null,
+                              "match_score": null,
+                              "_rich": {
+                                "drug_name": "Pembrolizumab",
+                                "efficacy": 0.7,
+                                "target_genes": [],
+                                "toxicity_profile": {
+                                  "Immune-related AE": 0.36,
+                                  "Thyroiditis": 0.28,
+                                  "Skin Rash": 0.33
+                                },
+                                "repair_type": "NER",
+                                "approval": "Trial",
+                                "mechanism": "PD-1 immune checkpoint inhibitor",
+                                "route": null,
+                                "match_score": null,
+                                "_rich": {
+                                  "drug_name": "Pembrolizumab",
+                                  "efficacy": 0.7,
+                                  "target_genes": [],
+                                  "toxicity_profile": {
+                                    "Immune-related AE": 0.36,
+                                    "Thyroiditis": 0.28,
+                                    "Skin Rash": 0.33
+                                  },
+                                  "repair_type": "NER",
+                                  "approval": "Trial",
+                                  "mechanism": "PD-1 immune checkpoint inhibitor",
+                                  "route": null,
+                                  "match_score": null,
+                                  "_rich": {
+                                    "drug_name": "Pembrolizumab",
+                                    "efficacy": 0.7,
+                                    "target_genes": [],
+                                    "toxicity_profile": {
+                                      "Immune-related AE": 0.36,
+                                      "Thyroiditis": 0.28,
+                                      "Skin Rash": 0.33
+                                    },
+                                    "repair_type": "NER",
+                                    "approval": "Trial",
+                                    "mechanism": "PD-1 immune checkpoint inhibitor",
+                                    "route": null,
+                                    "match_score": null,
+                                    "_rich": {
+                                      "drug_name": "Pembrolizumab",
+                                      "efficacy": 0.7,
+                                      "target_genes": [],
+                                      "toxicity_profile": {
+                                        "Immune-related AE": 0.36,
+                                        "Thyroiditis": 0.28,
+                                        "Skin Rash": 0.33
+                                      },
+                                      "repair_type": "NER",
+                                      "approval": "Trial",
+                                      "mechanism": "PD-1 immune checkpoint inhibitor",
+                                      "route": null,
+                                      "match_score": null,
+                                      "_rich": {
+                                        "drug_name": "Pembrolizumab",
+                                        "efficacy": 0.7,
+                                        "target_genes": [
+                                          "PDCD1",
+                                          "CD274"
+                                        ],
+                                        "toxicity_profile": {
+                                          "Immune-related AE": 0.36,
+                                          "Thyroiditis": 0.28,
+                                          "Skin Rash": 0.33
+                                        },
+                                        "repair_type": "NER",
+                                        "approval": "Trial",
+                                        "mechanism": "PD-1 immune checkpoint inhibitor",
+                                        "route": null,
+                                        "match_score": null,
+                                        "_rich": {
+                                          "drug_name": "Pembrolizumab",
+                                          "repair_type": "NER",
+                                          "match_score": 0.85,
+                                          "approval": "Trial",
+                                          "efficacy_range": [
+                                            0.6,
+                                            0.8
+                                          ],
+                                          "mechanism": "PD-1 immune checkpoint inhibitor",
+                                          "targets": [
+                                            "PDCD1",
+                                            "CD274"
+                                          ],
+                                          "toxicity_profile": {
+                                            "Immune-related AE": 0.36,
+                                            "Thyroiditis": 0.28,
+                                            "Skin Rash": 0.33
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "drug_name": "Tamoxifen",
+    "efficacy": 0.7,
+    "target_genes": [],
+    "toxicity_profile": {
+      "Hot Flashes": 0.45,
+      "Thromboembolism": 0.18,
+      "Mood Swings": 0.21
+    },
+    "repair_type": "BER",
+    "approval": "FDA",
+    "mechanism": "Selective Estrogen Receptor Modulator (SERM)",
+    "route": null,
+    "match_score": null,
+    "_rich": {
+      "drug_name": "Tamoxifen",
+      "efficacy": 0.7,
+      "target_genes": [],
+      "toxicity_profile": {
+        "Hot Flashes": 0.45,
+        "Thromboembolism": 0.18,
+        "Mood Swings": 0.21
+      },
+      "repair_type": "BER",
+      "approval": "FDA",
+      "mechanism": "Selective Estrogen Receptor Modulator (SERM)",
+      "route": null,
+      "match_score": null,
+      "_rich": {
+        "drug_name": "Tamoxifen",
+        "efficacy": 0.7,
+        "target_genes": [],
+        "toxicity_profile": {
+          "Hot Flashes": 0.45,
+          "Thromboembolism": 0.18,
+          "Mood Swings": 0.21
+        },
+        "repair_type": "BER",
+        "approval": "FDA",
+        "mechanism": "Selective Estrogen Receptor Modulator (SERM)",
+        "route": null,
+        "match_score": null,
+        "_rich": {
+          "drug_name": "Tamoxifen",
+          "efficacy": 0.7,
+          "target_genes": [],
+          "toxicity_profile": {
+            "Hot Flashes": 0.45,
+            "Thromboembolism": 0.18,
+            "Mood Swings": 0.21
+          },
+          "repair_type": "BER",
+          "approval": "FDA",
+          "mechanism": "Selective Estrogen Receptor Modulator (SERM)",
+          "route": null,
+          "match_score": null,
+          "_rich": {
+            "drug_name": "Tamoxifen",
+            "efficacy": 0.7,
+            "target_genes": [],
+            "toxicity_profile": {
+              "Hot Flashes": 0.45,
+              "Thromboembolism": 0.18,
+              "Mood Swings": 0.21
+            },
+            "repair_type": "BER",
+            "approval": "FDA",
+            "mechanism": "Selective Estrogen Receptor Modulator (SERM)",
+            "route": null,
+            "match_score": null,
+            "_rich": {
+              "drug_name": "Tamoxifen",
+              "efficacy": 0.7,
+              "target_genes": [],
+              "toxicity_profile": {
+                "Hot Flashes": 0.45,
+                "Thromboembolism": 0.18,
+                "Mood Swings": 0.21
+              },
+              "repair_type": "BER",
+              "approval": "FDA",
+              "mechanism": "Selective Estrogen Receptor Modulator (SERM)",
+              "route": null,
+              "match_score": null,
+              "_rich": {
+                "drug_name": "Tamoxifen",
+                "efficacy": 0.7,
+                "target_genes": [],
+                "toxicity_profile": {
+                  "Hot Flashes": 0.45,
+                  "Thromboembolism": 0.18,
+                  "Mood Swings": 0.21
+                },
+                "repair_type": "BER",
+                "approval": "FDA",
+                "mechanism": "Selective Estrogen Receptor Modulator (SERM)",
+                "route": null,
+                "match_score": null,
+                "_rich": {
+                  "drug_name": "Tamoxifen",
+                  "efficacy": 0.7,
+                  "target_genes": [],
+                  "toxicity_profile": {
+                    "Hot Flashes": 0.45,
+                    "Thromboembolism": 0.18,
+                    "Mood Swings": 0.21
+                  },
+                  "repair_type": "BER",
+                  "approval": "FDA",
+                  "mechanism": "Selective Estrogen Receptor Modulator (SERM)",
+                  "route": null,
+                  "match_score": null,
+                  "_rich": {
+                    "drug_name": "Tamoxifen",
+                    "efficacy": 0.7,
+                    "target_genes": [],
+                    "toxicity_profile": {
+                      "Hot Flashes": 0.45,
+                      "Thromboembolism": 0.18,
+                      "Mood Swings": 0.21
+                    },
+                    "repair_type": "BER",
+                    "approval": "FDA",
+                    "mechanism": "Selective Estrogen Receptor Modulator (SERM)",
+                    "route": null,
+                    "match_score": null,
+                    "_rich": {
+                      "drug_name": "Tamoxifen",
+                      "efficacy": 0.7,
+                      "target_genes": [],
+                      "toxicity_profile": {
+                        "Hot Flashes": 0.45,
+                        "Thromboembolism": 0.18,
+                        "Mood Swings": 0.21
+                      },
+                      "repair_type": "BER",
+                      "approval": "FDA",
+                      "mechanism": "Selective Estrogen Receptor Modulator (SERM)",
+                      "route": null,
+                      "match_score": null,
+                      "_rich": {
+                        "drug_name": "Tamoxifen",
+                        "efficacy": 0.7,
+                        "target_genes": [],
+                        "toxicity_profile": {
+                          "Hot Flashes": 0.45,
+                          "Thromboembolism": 0.18,
+                          "Mood Swings": 0.21
+                        },
+                        "repair_type": "BER",
+                        "approval": "FDA",
+                        "mechanism": "Selective Estrogen Receptor Modulator (SERM)",
+                        "route": null,
+                        "match_score": null,
+                        "_rich": {
+                          "drug_name": "Tamoxifen",
+                          "efficacy": 0.7,
+                          "target_genes": [],
+                          "toxicity_profile": {
+                            "Hot Flashes": 0.45,
+                            "Thromboembolism": 0.18,
+                            "Mood Swings": 0.21
+                          },
+                          "repair_type": "BER",
+                          "approval": "FDA",
+                          "mechanism": "Selective Estrogen Receptor Modulator (SERM)",
+                          "route": null,
+                          "match_score": null,
+                          "_rich": {
+                            "drug_name": "Tamoxifen",
+                            "efficacy": 0.7,
+                            "target_genes": [],
+                            "toxicity_profile": {
+                              "Hot Flashes": 0.45,
+                              "Thromboembolism": 0.18,
+                              "Mood Swings": 0.21
+                            },
+                            "repair_type": "BER",
+                            "approval": "FDA",
+                            "mechanism": "Selective Estrogen Receptor Modulator (SERM)",
+                            "route": null,
+                            "match_score": null,
+                            "_rich": {
+                              "drug_name": "Tamoxifen",
+                              "efficacy": 0.7,
+                              "target_genes": [],
+                              "toxicity_profile": {
+                                "Hot Flashes": 0.45,
+                                "Thromboembolism": 0.18,
+                                "Mood Swings": 0.21
+                              },
+                              "repair_type": "BER",
+                              "approval": "FDA",
+                              "mechanism": "Selective Estrogen Receptor Modulator (SERM)",
+                              "route": null,
+                              "match_score": null,
+                              "_rich": {
+                                "drug_name": "Tamoxifen",
+                                "efficacy": 0.7,
+                                "target_genes": [],
+                                "toxicity_profile": {
+                                  "Hot Flashes": 0.45,
+                                  "Thromboembolism": 0.18,
+                                  "Mood Swings": 0.21
+                                },
+                                "repair_type": "BER",
+                                "approval": "FDA",
+                                "mechanism": "Selective Estrogen Receptor Modulator (SERM)",
+                                "route": null,
+                                "match_score": null,
+                                "_rich": {
+                                  "drug_name": "Tamoxifen",
+                                  "efficacy": 0.7,
+                                  "target_genes": [],
+                                  "toxicity_profile": {
+                                    "Hot Flashes": 0.45,
+                                    "Thromboembolism": 0.18,
+                                    "Mood Swings": 0.21
+                                  },
+                                  "repair_type": "BER",
+                                  "approval": "FDA",
+                                  "mechanism": "Selective Estrogen Receptor Modulator (SERM)",
+                                  "route": null,
+                                  "match_score": null,
+                                  "_rich": {
+                                    "drug_name": "Tamoxifen",
+                                    "efficacy": 0.7,
+                                    "target_genes": [],
+                                    "toxicity_profile": {
+                                      "Hot Flashes": 0.45,
+                                      "Thromboembolism": 0.18,
+                                      "Mood Swings": 0.21
+                                    },
+                                    "repair_type": "BER",
+                                    "approval": "FDA",
+                                    "mechanism": "Selective Estrogen Receptor Modulator (SERM)",
+                                    "route": null,
+                                    "match_score": null,
+                                    "_rich": {
+                                      "drug_name": "Tamoxifen",
+                                      "efficacy": 0.7,
+                                      "target_genes": [],
+                                      "toxicity_profile": {
+                                        "Hot Flashes": 0.45,
+                                        "Thromboembolism": 0.18,
+                                        "Mood Swings": 0.21
+                                      },
+                                      "repair_type": "BER",
+                                      "approval": "FDA",
+                                      "mechanism": "Selective Estrogen Receptor Modulator (SERM)",
+                                      "route": null,
+                                      "match_score": null,
+                                      "_rich": {
+                                        "drug_name": "Tamoxifen",
+                                        "efficacy": 0.7,
+                                        "target_genes": [
+                                          "ESR1"
+                                        ],
+                                        "toxicity_profile": {
+                                          "Hot Flashes": 0.45,
+                                          "Thromboembolism": 0.18,
+                                          "Mood Swings": 0.21
+                                        },
+                                        "repair_type": "BER",
+                                        "approval": "FDA",
+                                        "mechanism": "Selective Estrogen Receptor Modulator (SERM)",
+                                        "route": null,
+                                        "match_score": null,
+                                        "_rich": {
+                                          "drug_name": "Tamoxifen",
+                                          "repair_type": "BER",
+                                          "match_score": 0.78,
+                                          "approval": "FDA",
+                                          "efficacy_range": [
+                                            0.7,
+                                            0.85
+                                          ],
+                                          "mechanism": "Selective Estrogen Receptor Modulator (SERM)",
+                                          "targets": [
+                                            "ESR1"
+                                          ],
+                                          "toxicity_profile": {
+                                            "Hot Flashes": 0.45,
+                                            "Thromboembolism": 0.18,
+                                            "Mood Swings": 0.21
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+]

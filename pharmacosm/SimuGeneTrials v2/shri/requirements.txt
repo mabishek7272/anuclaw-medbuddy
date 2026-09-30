@@ -1,0 +1,44 @@
+streamlit
+transformers
+torch
+safetensors
+accelerate
+# Core AI / Transformers (PyTorch only)
+torch>=2.2.0
+transformers>=4.41.0
+accelerate>=0.28.0
+safetensors>=0.4.3
+sentencepiece>=0.2.0
+protobuf
+quantumrandom
+AUGMENTEER>=0.9.6
+BIOPYTHON>=1.81
+
+
+
+
+# UI / App
+streamlit>=1.37.0
+pandas>=2.2.0
+numpy>=1.26.0
+
+# Visualization / Explainability
+matplotlib>=3.9.0
+plotly>=5.22.0
+shap>=0.44.0
+
+# Data + Reports
+openpyxl>=3.1.2
+reportlab>=4.2.0
+fpdf2>=2.7.9
+python-dateutil
+
+# Chemistry / Drug matching (optional for later)
+rdkit-pypi
+pubchempy
+
+# Dev / Utils
+tqdm
+requests
+pytest
+black

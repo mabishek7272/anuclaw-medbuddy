@@ -1,0 +1,263 @@
+[
+  {
+    "drug_name": "Olaparib",
+    "repair_type": "HR",
+    "targets": [
+      "BRCA1",
+      "BRCA2",
+      "RAD51"
+    ],
+    "mechanism": "PARP inhibitor",
+    "match_score": 0.92,
+    "route": "Oral",
+    "approval": "FDA",
+    "side_effects": "Fatigue, nausea, anemia"
+  },
+  {
+    "drug_name": "Niraparib",
+    "repair_type": "HR",
+    "targets": [
+      "BRCA1",
+      "BRCA2"
+    ],
+    "mechanism": "PARP inhibitor",
+    "match_score": 0.89,
+    "route": "Oral",
+    "approval": "FDA",
+    "side_effects": "Thrombocytopenia, hypertension"
+  },
+  {
+    "drug_name": "Temozolomide",
+    "repair_type": "BER",
+    "targets": [
+      "MGMT",
+      "PARP1"
+    ],
+    "mechanism": "Alkylating agent",
+    "match_score": 0.81,
+    "route": "Oral",
+    "approval": "FDA",
+    "side_effects": "Hair loss, vomiting, fatigue"
+  },
+  {
+    "drug_name": "Methoxyamine",
+    "repair_type": "BER",
+    "targets": [
+      "APE1",
+      "XRCC1"
+    ],
+    "mechanism": "BER pathway inhibitor",
+    "match_score": 0.76,
+    "route": "Oral",
+    "approval": "Trial",
+    "side_effects": "Headache, nausea"
+  },
+  {
+    "drug_name": "Cisplatin",
+    "repair_type": "NER",
+    "targets": [
+      "XPA",
+      "ERCC1"
+    ],
+    "mechanism": "DNA crosslinker",
+    "match_score": 0.85,
+    "route": "IV",
+    "approval": "FDA",
+    "side_effects": "Kidney damage, nausea"
+  },
+  {
+    "drug_name": "Mitomycin C",
+    "repair_type": "NER",
+    "targets": [
+      "ERCC2",
+      "XPC"
+    ],
+    "mechanism": "DNA crosslinking agent",
+    "match_score": 0.83,
+    "route": "IV",
+    "approval": "Trial",
+    "side_effects": "Pulmonary fibrosis, fatigue"
+  },
+  {
+    "drug_name": "Etoposide",
+    "repair_type": "NHEJ",
+    "targets": [
+      "TOP2B",
+      "LIG4"
+    ],
+    "mechanism": "Topoisomerase II inhibitor",
+    "match_score": 0.78,
+    "route": "IV",
+    "approval": "Experimental",
+    "side_effects": "Low blood count, fever"
+  },
+  {
+    "drug_name": "Bleomycin",
+    "repair_type": "NHEJ",
+    "targets": [
+      "ATM",
+      "DNA-PKcs"
+    ],
+    "mechanism": "Causes DNA strand breaks",
+    "match_score": 0.75,
+    "route": "IV",
+    "approval": "FDA",
+    "side_effects": "Lung fibrosis, rash"
+  },
+  {
+    "drug_name": "Veliparib",
+    "repair_type": "HR",
+    "targets": [
+      "BRCA1",
+      "PARP1"
+    ],
+    "mechanism": "PARP inhibitor",
+    "match_score": 0.88,
+    "route": "Oral",
+    "approval": "Trial",
+    "side_effects": "Neutropenia, headache"
+  },
+  {
+    "drug_name": "Carboplatin",
+    "repair_type": "NER",
+    "targets": [
+      "XPA",
+      "XPD"
+    ],
+    "mechanism": "DNA-damaging platinum compound",
+    "match_score": 0.8,
+    "route": "IV",
+    "approval": "FDA",
+    "side_effects": "Myelosuppression, nausea"
+  },
+  {
+    "drug_name": "Talazoparib",
+    "repair_type": "HR",
+    "targets": [
+      "BRCA1",
+      "RAD51",
+      "PALB2"
+    ],
+    "mechanism": "PARP inhibitor",
+    "match_score": 0.87,
+    "route": "Oral",
+    "approval": "FDA",
+    "side_effects": "Anemia, fatigue, neutropenia"
+  },
+  {
+    "drug_name": "Doxorubicin",
+    "repair_type": "NHEJ",
+    "targets": [
+      "TOP2A",
+      "LIG4"
+    ],
+    "mechanism": "DNA intercalation and topoisomerase II inhibition",
+    "match_score": 0.84,
+    "route": "IV",
+    "approval": "FDA",
+    "side_effects": "Cardiotoxicity, nausea"
+  },
+  {
+    "drug_name": "Fludarabine",
+    "repair_type": "BER",
+    "targets": [
+      "DNA polymerase",
+      "APE1"
+    ],
+    "mechanism": "Antimetabolite",
+    "match_score": 0.79,
+    "route": "IV",
+    "approval": "FDA",
+    "side_effects": "Immunosuppression, fever"
+  },
+  {
+    "drug_name": "Gemcitabine",
+    "repair_type": "BER",
+    "targets": [
+      "RRM1",
+      "XRCC1"
+    ],
+    "mechanism": "DNA synthesis inhibitor",
+    "match_score": 0.82,
+    "route": "IV",
+    "approval": "FDA",
+    "side_effects": "Myelosuppression, nausea"
+  },
+  {
+    "drug_name": "Irinotecan",
+    "repair_type": "NHEJ",
+    "targets": [
+      "TOP1",
+      "ATM"
+    ],
+    "mechanism": "Topoisomerase I inhibitor",
+    "match_score": 0.77,
+    "route": "IV",
+    "approval": "FDA",
+    "side_effects": "Diarrhea, leukopenia"
+  },
+  {
+    "drug_name": "Trastuzumab",
+    "repair_type": "HR",
+    "targets": [
+      "BRCA2",
+      "HER2"
+    ],
+    "mechanism": "Monoclonal antibody against HER2",
+    "match_score": 0.76,
+    "route": "IV",
+    "approval": "FDA",
+    "side_effects": "Cardiac dysfunction, rash"
+  },
+  {
+    "drug_name": "5-Fluorouracil",
+    "repair_type": "BER",
+    "targets": [
+      "TYMS",
+      "XRCC1"
+    ],
+    "mechanism": "Thymidylate synthase inhibitor",
+    "match_score": 0.78,
+    "route": "IV",
+    "approval": "FDA",
+    "side_effects": "Mucositis, bone marrow suppression"
+  },
+  {
+    "drug_name": "Capecitabine",
+    "repair_type": "BER",
+    "targets": [
+      "TYMS"
+    ],
+    "mechanism": "Oral prodrug of 5-FU",
+    "match_score": 0.77,
+    "route": "Oral",
+    "approval": "FDA",
+    "side_effects": "Hand-foot syndrome, diarrhea"
+  },
+  {
+    "drug_name": "Topotecan",
+    "repair_type": "NHEJ",
+    "targets": [
+      "TOP1",
+      "DNA-PK"
+    ],
+    "mechanism": "Topoisomerase I inhibitor",
+    "match_score": 0.8,
+    "route": "IV",
+    "approval": "FDA",
+    "side_effects": "Bone marrow suppression, fever"
+  },
+  {
+    "drug_name": "Daunorubicin",
+    "repair_type": "HR",
+    "targets": [
+      "BRCA1",
+      "TOP2"
+    ],
+    "mechanism": "Anthracycline antibiotic",
+    "match_score": 0.75,
+    "route": "IV",
+    "approval": "FDA",
+    "side_effects": "Myelosuppression, cardiac risk"
+  }
+]

@@ -1,0 +1,44 @@
+{
+  "Heart": {
+    "baseline_function": 0.95,
+    "metabolism_contribution": 0.05,
+    "drug_sensitivity": {
+      "Cardiac Risk": 0.8,
+      "Fatigue": 0.4
+    }
+  },
+  "Liver": {
+    "baseline_function": 0.9,
+    "metabolism_contribution": 0.75,
+    "drug_sensitivity": {
+      "Hepatotoxicity": 0.9,
+      "Nausea": 0.3,
+      "ALT/AST Elevation": 0.8
+    }
+  },
+  "Kidney": {
+    "baseline_function": 0.92,
+    "metabolism_contribution": 0.15,
+    "drug_sensitivity": {
+      "Nephrotoxicity": 0.85,
+      "Fatigue": 0.3
+    }
+  },
+  "Brain": {
+    "baseline_function": 0.88,
+    "metabolism_contribution": 0.02,
+    "drug_sensitivity": {
+      "Mood Swings": 0.7,
+      "Cognitive Fog": 0.6,
+      "Headache": 0.5
+    }
+  },
+  "Lungs": {
+    "baseline_function": 0.93,
+    "metabolism_contribution": 0.03,
+    "drug_sensitivity": {
+      "Pulmonary Edema": 0.75,
+      "Immune-related AE": 0.6
+    }
+  }
+}

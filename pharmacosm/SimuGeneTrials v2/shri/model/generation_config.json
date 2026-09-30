@@ -1,0 +1,6 @@
+{
+  "do_sample": true,
+  "top_k": 64,
+  "top_p": 0.95,
+  "transformers_version": "4.56.1"
+}

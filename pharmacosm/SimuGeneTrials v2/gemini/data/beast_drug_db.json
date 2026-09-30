@@ -1,0 +1,233 @@
+[
+  {
+    "drug_name": "Olaparib",
+    "drug_id": "DB09074",
+    "developer": "AstraZeneca",
+    "mechanism_class": "Enzyme Inhibitor",
+    "mechanism": "PARP inhibitor",
+    "standard_dose_mg": 300,
+    "repair_type": "HR",
+    "approval": "FDA",
+    "indications": ["Ovarian Cancer", "Breast Cancer", "Pancreatic Cancer", "Prostate Cancer"],
+    "pharmacokinetics": { "bioavailability_percent": 85, "half_life_hours": 15, "metabolism": "CYP3A4" },
+    "biomarkers": {
+      "required_mutations": ["gBRCA1", "gBRCA2", "HRR gene mutations"],
+      "resistance_mechanisms": ["PARP1 mutation", "Reversion mutations in BRCA"]
+    },
+    "computational": { "molecular_weight": 534.6 },
+    "performance": {
+      "match_score": 0.92, "efficacy_range": [0.75, 0.95],
+      "toxicity_profile": { "Nausea": 0.42, "Fatigue": 0.65, "Anemia": 0.38, "Cardiac Risk": 0.13 }
+    }
+  },
+  {
+    "drug_name": "Niraparib",
+    "drug_id": "DB11928",
+    "developer": "GlaxoSmithKline",
+    "mechanism_class": "Enzyme Inhibitor",
+    "mechanism": "PARP inhibitor",
+    "standard_dose_mg": 200,
+    "repair_type": "HR",
+    "approval": "FDA",
+    "indications": ["Ovarian Cancer", "Fallopian Tube Cancer"],
+    "pharmacokinetics": { "bioavailability_percent": 73, "half_life_hours": 36, "metabolism": "Carboxylesterases" },
+    "biomarkers": {
+      "required_mutations": ["HRD-positive status"],
+      "resistance_mechanisms": ["Upregulation of drug efflux pumps"]
+    },
+    "computational": { "molecular_weight": 420.5 },
+    "performance": {
+      "match_score": 0.9, "efficacy_range": [0.7, 0.92],
+      "toxicity_profile": { "Nausea": 0.35, "Thrombocytopenia": 0.4, "Fatigue": 0.55 }
+    }
+  },
+  {
+    "drug_name": "Rucaparib",
+    "drug_id": "DB12332",
+    "developer": "Clovis Oncology",
+    "mechanism_class": "Enzyme Inhibitor",
+    "mechanism": "PARP inhibitor",
+    "standard_dose_mg": 600,
+    "repair_type": "HR",
+    "approval": "FDA",
+    "indications": ["Ovarian Cancer", "Prostate Cancer"],
+    "pharmacokinetics": { "bioavailability_percent": 36, "half_life_hours": 17, "metabolism": "CYP2D6, CYP3A4" },
+    "biomarkers": {
+      "required_mutations": ["gBRCA1", "gBRCA2", "somatic BRCA"],
+      "resistance_mechanisms": ["Secondary PARP1 mutations"]
+    },
+    "computational": { "molecular_weight": 323.4 },
+    "performance": {
+      "match_score": 0.88, "efficacy_range": [0.68, 0.90],
+      "toxicity_profile": { "Nausea": 0.5, "AST/ALT Elevation": 0.4, "Fatigue": 0.45 }
+    }
+  },
+  {
+    "drug_name": "Talazoparib",
+    "drug_id": "DB11760",
+    "developer": "Pfizer",
+    "mechanism_class": "Enzyme Inhibitor",
+    "mechanism": "PARP inhibitor",
+    "standard_dose_mg": 1,
+    "repair_type": "HR",
+    "approval": "FDA",
+    "indications": ["Breast Cancer", "Prostate Cancer"],
+    "pharmacokinetics": { "bioavailability_percent": 95, "half_life_hours": 80, "metabolism": "Primarily renal clearance" },
+    "biomarkers": {
+      "required_mutations": ["gBRCAm"],
+      "resistance_mechanisms": ["P-glycoprotein efflux"]
+    },
+    "computational": { "molecular_weight": 380.4 },
+    "performance": {
+      "match_score": 0.89, "efficacy_range": [0.70, 0.93],
+      "toxicity_profile": { "Anemia": 0.53, "Neutropenia": 0.35, "Fatigue": 0.62 }
+    }
+  },
+  {
+    "drug_name": "Pembrolizumab",
+    "drug_id": "DB09037",
+    "developer": "Merck",
+    "mechanism_class": "Monoclonal Antibody",
+    "mechanism": "PD-1 immune checkpoint inhibitor",
+    "standard_dose_mg": 200,
+    "repair_type": "MMR",
+    "approval": "FDA",
+    "indications": ["Melanoma", "NSCLC", "MSI-H/dMMR tumors"],
+    "pharmacokinetics": { "bioavailability_percent": 100, "half_life_hours": 624, "metabolism": "Catabolism" },
+    "biomarkers": {
+      "required_mutations": ["PD-L1 expression", "MSI-H", "dMMR", "High TMB"],
+      "resistance_mechanisms": ["Loss of beta-2-microglobulin (B2M)", "JAK1/2 mutations"]
+    },
+    "computational": { "molecular_weight": 149000 },
+    "performance": {
+      "match_score": 0.85, "efficacy_range": [0.6, 0.8],
+      "toxicity_profile": { "Immune-related AE": 0.36, "Thyroiditis": 0.28, "Skin Rash": 0.33 }
+    }
+  },
+  {
+    "drug_name": "Nivolumab",
+    "drug_id": "DB09035",
+    "developer": "Bristol Myers Squibb",
+    "mechanism_class": "Monoclonal Antibody",
+    "mechanism": "PD-1 immune checkpoint inhibitor",
+    "standard_dose_mg": 240,
+    "repair_type": "MMR",
+    "approval": "FDA",
+    "indications": ["Melanoma", "NSCLC", "Renal Cell Carcinoma"],
+    "pharmacokinetics": { "bioavailability_percent": 100, "half_life_hours": 648, "metabolism": "Catabolism" },
+    "biomarkers": {
+      "required_mutations": ["PD-L1 expression", "MSI-H", "dMMR"],
+      "resistance_mechanisms": ["T-cell exhaustion"]
+    },
+    "computational": { "molecular_weight": 143600 },
+    "performance": {
+      "match_score": 0.83, "efficacy_range": [0.58, 0.78],
+      "toxicity_profile": { "Immune-related AE": 0.34, "Fatigue": 0.3, "Rash": 0.28 }
+    }
+  },
+  {
+    "drug_name": "Atezolizumab",
+    "drug_id": "DB11598",
+    "developer": "Genentech (Roche)",
+    "mechanism_class": "Monoclonal Antibody",
+    "mechanism": "PD-L1 immune checkpoint inhibitor",
+    "standard_dose_mg": 1200,
+    "repair_type": "MMR",
+    "approval": "FDA",
+    "indications": ["Urothelial Carcinoma", "NSCLC", "SCLC", "TNBC"],
+    "pharmacokinetics": { "bioavailability_percent": 100, "half_life_hours": 648, "metabolism": "Catabolism" },
+    "biomarkers": {
+      "required_mutations": ["PD-L1 expression"],
+      "resistance_mechanisms": ["Low tumor antigenicity"]
+    },
+    "computational": { "molecular_weight": 145000 },
+    "performance": {
+      "match_score": 0.84, "efficacy_range": [0.59, 0.81],
+      "toxicity_profile": { "Immune-mediated AE": 0.4, "Fatigue": 0.4, "Nausea": 0.3, "Pneumonitis": 0.1 }
+    }
+  },
+  {
+    "drug_name": "Cisplatin",
+    "drug_id": "DB00515",
+    "developer": "Various (Generic)",
+    "mechanism_class": "Alkylating Agent",
+    "mechanism": "DNA crosslinking platinum agent",
+    "standard_dose_mg": 75,
+    "repair_type": "NER",
+    "approval": "FDA",
+    "indications": ["Testicular Cancer", "Ovarian Cancer", "Bladder Cancer"],
+    "pharmacokinetics": { "bioavailability_percent": 100, "half_life_hours": 73, "metabolism": "Non-enzymatic" },
+    "biomarkers": {
+      "required_mutations": ["None (broad-spectrum)"],
+      "resistance_mechanisms": ["Increased NER activity", "Decreased drug uptake"]
+    },
+    "computational": { "molecular_weight": 300.0 },
+    "performance": {
+      "match_score": 0.86, "efficacy_range": [0.6, 0.85],
+      "toxicity_profile": { "Nephrotoxicity": 0.45, "Ototoxicity": 0.35, "Nausea/Vomiting": 0.55 }
+    }
+  },
+  {
+    "drug_name": "Carboplatin",
+    "drug_id": "DB00958",
+    "developer": "Bristol Myers Squibb",
+    "mechanism_class": "Alkylating Agent",
+    "mechanism": "DNA crosslinking platinum agent",
+    "standard_dose_mg": 300,
+    "repair_type": "NER",
+    "approval": "FDA",
+    "indications": ["Ovarian Cancer", "Lung Cancer"],
+    "pharmacokinetics": { "bioavailability_percent": 100, "half_life_hours": 30, "metabolism": "Non-enzymatic hydrolysis" },
+    "biomarkers": {
+      "required_mutations": ["None (broad-spectrum)"],
+      "resistance_mechanisms": ["Enhanced DNA repair"]
+    },
+    "computational": { "molecular_weight": 371.25 },
+    "performance": {
+      "match_score": 0.82, "efficacy_range": [0.58, 0.82],
+      "toxicity_profile": { "Myelosuppression": 0.6, "Nausea/Vomiting": 0.4, "Nephrotoxicity": 0.2 }
+    }
+  },
+  {
+    "drug_name": "Oxaliplatin",
+    "drug_id": "DB00526",
+    "developer": "Sanofi-Aventis",
+    "mechanism_class": "Alkylating Agent",
+    "mechanism": "DNA crosslinking platinum agent",
+    "standard_dose_mg": 85,
+    "repair_type": "NER",
+    "approval": "FDA",
+    "indications": ["Colorectal Cancer"],
+    "pharmacokinetics": { "bioavailability_percent": 100, "half_life_hours": 12, "metabolism": "Non-enzymatic" },
+    "biomarkers": {
+      "required_mutations": ["None (broad-spectrum)"],
+      "resistance_mechanisms": ["Glutathione detoxification"]
+    },
+    "computational": { "molecular_weight": 397.29 },
+    "performance": {
+      "match_score": 0.80, "efficacy_range": [0.55, 0.80],
+      "toxicity_profile": { "Peripheral Neuropathy": 0.55, "Nausea/Vomiting": 0.4, "Myelosuppression": 0.3 }
+    }
+  },
+  {
+    "drug_name": "Tamoxifen",
+    "drug_id": "DB00675",
+    "developer": "Various (Generic)",
+    "mechanism_class": "Hormonal Agent",
+    "mechanism": "Selective Estrogen Receptor Modulator (SERM)",
+    "standard_dose_mg": 20,
+    "repair_type": "BER",
+    "approval": "FDA",
+    "indications": ["Breast Cancer (ER+)"],
+    "pharmacokinetics": { "bioavailability_percent": 90, "half_life_hours": 168, "metabolism": "CYP2D6, CYP3A4" },
+    "biomarkers": {
+      "required_mutations": ["ESR1 expression"],
+      "resistance_mechanisms": ["ESR1 mutations (e.g., Y537S)"]
+    },
+    "computational": { "molecular_weight": 371.5 },
+    "performance": {
+      "match_score": 0.78, "efficacy_range": [0.7, 0.85],
+      "toxicity_profile": { "Hot Flashes": 0.45, "Thromboembolism": 0.18, "Mood Swings": 0.21 }
+    }
+  }
+]

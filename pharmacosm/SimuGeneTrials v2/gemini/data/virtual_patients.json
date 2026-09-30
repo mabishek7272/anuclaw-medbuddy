@@ -1,0 +1,72 @@
+[
+  {
+    "id": "VP-Q01",
+    "phenotype": { "age": 47, "sex": "Female", "diagnosis": "Stage II Triple-Negative Breast Cancer", "comorbidities": ["Mild Hypertension"] },
+    "genomic_profile": { "somatic_mutations": ["gBRCA1", "TP53", "RAD51C"], "tumor_mutational_burden_tmb": 12.5, "microsatellite_instability_msi": "MSI-Stable", "gene_expression": { "PD-L1_cps": 5, "ESR1": "Negative", "HER2": "Negative" }},
+    "realtime_biometrics": { "heart_rate_variability_ms": 45, "blood_oxygen_spo2_percent": 98, "circadian_rhythm_stability": 0.78 },
+    "psychological_profile": { "primary_mood": "Anxious", "stress_index": 0.82, "resilience_score": 0.65 },
+    "organ_health_baseline": { "Liver": 0.88, "Kidney": 0.91, "Heart": 0.83, "Brain": 0.9, "Lungs": 0.95 },
+    "quantum_biological_signature": { "cellular_decoherence_rate_cdr": 0.04, "neural_coherence_score": 0.85, "metabolic_spin_polarization": 0.61 },
+    "treatment_history": [ { "treatment": "Doxorubicin + Cyclophosphamide", "cycles": 4, "outcome": "Partial Response, Significant Neutropenia" } ]
+  },
+  {
+    "id": "VP-Q02",
+    "phenotype": { "age": 62, "sex": "Male", "diagnosis": "Stage IV Non-Small Cell Lung Cancer (NSCLC)", "comorbidities": ["COPD"] },
+    "genomic_profile": { "somatic_mutations": ["KRAS G12C", "PDCD1"], "tumor_mutational_burden_tmb": 18.2, "microsatellite_instability_msi": "MSI-High", "gene_expression": { "PD-L1_cps": 85, "EGFR": "Wild-type", "ALK": "Negative" }},
+    "realtime_biometrics": { "heart_rate_variability_ms": 35, "blood_oxygen_spo2_percent": 94, "circadian_rhythm_stability": 0.61 },
+    "psychological_profile": { "primary_mood": "Neutral", "stress_index": 0.55, "resilience_score": 0.71 },
+    "organ_health_baseline": { "Liver": 0.74, "Kidney": 0.79, "Heart": 0.76, "Brain": 0.85, "Lungs": 0.65 },
+    "quantum_biological_signature": { "cellular_decoherence_rate_cdr": 0.09, "neural_coherence_score": 0.91, "metabolic_spin_polarization": 0.55 },
+    "treatment_history": [ { "treatment": "Carboplatin + Pemetrexed", "cycles": 6, "outcome": "Disease Progression" } ]
+  },
+  {
+    "id": "VP-Q03",
+    "phenotype": { "age": 38, "sex": "Female", "diagnosis": "Glioblastoma with suspected NQID", "comorbidities": ["Episodic Tremors"] },
+    "genomic_profile": { "somatic_mutations": ["IDH1", "ATRX", "QNTF1", "SYN3"], "tumor_mutational_burden_tmb": 4.1, "microsatellite_instability_msi": "MSI-Stable", "gene_expression": { "MGMT_promoter": "Methylated" }},
+    "realtime_biometrics": { "heart_rate_variability_ms": 62, "blood_oxygen_spo2_percent": 99, "circadian_rhythm_stability": 0.45 },
+    "psychological_profile": { "primary_mood": "Calm", "stress_index": 0.31, "resilience_score": 0.88 },
+    "organ_health_baseline": { "Liver": 0.95, "Kidney": 0.98, "Heart": 0.92, "Brain": 0.75, "Lungs": 0.94 },
+    "quantum_biological_signature": { "cellular_decoherence_rate_cdr": 0.02, "neural_coherence_score": 0.18, "metabolic_spin_polarization": 0.73 },
+    "treatment_history": [ { "treatment": "Temozolomide + Radiation", "cycles": 1, "outcome": "Ongoing, severe neurotoxicity observed" } ]
+  },
+  {
+    "id": "VP-Q04",
+    "phenotype": { "age": 55, "sex": "Female", "diagnosis": "Metastatic Ovarian Cancer", "comorbidities": [] },
+    "genomic_profile": { "somatic_mutations": ["gBRCA2", "TP53"], "tumor_mutational_burden_tmb": 8.0, "microsatellite_instability_msi": "MSI-Stable", "gene_expression": { "PD-L1_cps": 10 }},
+    "realtime_biometrics": { "heart_rate_variability_ms": 50, "blood_oxygen_spo2_percent": 97, "circadian_rhythm_stability": 0.85 },
+    "psychological_profile": { "primary_mood": "Optimistic", "stress_index": 0.40, "resilience_score": 0.90 },
+    "organ_health_baseline": { "Liver": 0.90, "Kidney": 0.95, "Heart": 0.98, "Brain": 0.92, "Lungs": 0.97 },
+    "quantum_biological_signature": { "cellular_decoherence_rate_cdr": 0.03, "neural_coherence_score": 0.95, "metabolic_spin_polarization": 0.68 },
+    "treatment_history": [ { "treatment": "Carboplatin + Paclitaxel", "cycles": 6, "outcome": "Initial Response, followed by relapse" } ]
+  },
+  {
+    "id": "VP-Q05",
+    "phenotype": { "age": 68, "sex": "Male", "diagnosis": "Metastatic Colorectal Cancer", "comorbidities": ["Type 2 Diabetes"] },
+    "genomic_profile": { "somatic_mutations": ["APC", "KRAS", "PIK3CA"], "tumor_mutational_burden_tmb": 60.5, "microsatellite_instability_msi": "MSI-High", "gene_expression": { "PD-L1_cps": 95 }},
+    "realtime_biometrics": { "heart_rate_variability_ms": 32, "blood_oxygen_spo2_percent": 95, "circadian_rhythm_stability": 0.55 },
+    "psychological_profile": { "primary_mood": "Stressed", "stress_index": 0.78, "resilience_score": 0.50 },
+    "organ_health_baseline": { "Liver": 0.80, "Kidney": 0.75, "Heart": 0.85, "Brain": 0.88, "Lungs": 0.90 },
+    "quantum_biological_signature": { "cellular_decoherence_rate_cdr": 0.12, "neural_coherence_score": 0.80, "metabolic_spin_polarization": 0.49 },
+    "treatment_history": [ { "treatment": "FOLFOX Regimen", "cycles": 8, "outcome": "Disease Progression" } ]
+  },
+  {
+    "id": "VP-Q06",
+    "phenotype": { "age": 60, "sex": "Female", "diagnosis": "Metastatic Pancreatic Cancer", "comorbidities": [] },
+    "genomic_profile": { "somatic_mutations": ["KRAS G12D", "CDKN2A"], "tumor_mutational_burden_tmb": 5.2, "microsatellite_instability_msi": "MSI-Stable", "gene_expression": { "PD-L1_cps": 1 }, "hrd_status": "Positive"},
+    "realtime_biometrics": { "heart_rate_variability_ms": 41, "blood_oxygen_spo2_percent": 96, "circadian_rhythm_stability": 0.70 },
+    "psychological_profile": { "primary_mood": "Depressed", "stress_index": 0.85, "resilience_score": 0.45 },
+    "organ_health_baseline": { "Liver": 0.70, "Kidney": 0.85, "Heart": 0.90, "Brain": 0.86, "Lungs": 0.91 },
+    "quantum_biological_signature": { "cellular_decoherence_rate_cdr": 0.08, "neural_coherence_score": 0.78, "metabolic_spin_polarization": 0.58 },
+    "treatment_history": [ { "treatment": "FOLFIRINOX", "cycles": 12, "outcome": "Stable Disease" } ]
+  },
+  {
+    "id": "VP-Q07",
+    "phenotype": { "age": 58, "sex": "Male", "diagnosis": "Hepatocellular Carcinoma", "comorbidities": ["Cirrhosis"] },
+    "genomic_profile": { "somatic_mutations": ["CTNNB1", "TERT"], "tumor_mutational_burden_tmb": 3.1, "microsatellite_instability_msi": "MSI-Stable", "gene_expression": { "PD-L1_cps": 2 }},
+    "realtime_biometrics": { "heart_rate_variability_ms": 38, "blood_oxygen_spo2_percent": 93, "circadian_rhythm_stability": 0.60 },
+    "psychological_profile": { "primary_mood": "Neutral", "stress_index": 0.65, "resilience_score": 0.60 },
+    "organ_health_baseline": { "Liver": 0.55, "Kidney": 0.80, "Heart": 0.82, "Brain": 0.89, "Lungs": 0.88 },
+    "quantum_biological_signature": { "cellular_decoherence_rate_cdr": 0.06, "neural_coherence_score": 0.82, "metabolic_spin_polarization": 0.51 },
+    "treatment_history": [ { "treatment": "Sorafenib", "cycles": 3, "outcome": "Disease Progression" } ]
+  }
+]

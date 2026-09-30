@@ -1,0 +1,270 @@
+[
+  {
+    "drug_name": "Olaparib",
+    "drug_id": "DB09074",
+    "developer": "AstraZeneca",
+    "mechanism_class": "Enzyme Inhibitor",
+    "mechanism": "PARP inhibitor",
+    "repair_type": "HR",
+    "approval": "FDA",
+    "clinical_phase": 4,
+    "indications": [
+      "Ovarian Cancer",
+      "Breast Cancer",
+      "Pancreatic Cancer",
+      "Prostate Cancer"
+    ],
+    "line_of_therapy": [
+      "1st-line maintenance",
+      "Metastatic"
+    ],
+    "route": "Oral",
+    "pharmacokinetics": {
+      "bioavailability_percent": 85,
+      "half_life_hours": 15,
+      "metabolism": "CYP3A4"
+    },
+    "biomarkers": {
+      "required_mutations": [
+        "gBRCA1",
+        "gBRCA2",
+        "HRR gene mutations"
+      ],
+      "companion_diagnostic": "BRACAnalysis CDx",
+      "resistance_mechanisms": [
+        "PARP1 mutation",
+        "Reversion mutations in BRCA"
+      ]
+    },
+    "computational": {
+      "smiles": "O=C(C1=CC=CC(C2=NNC(C3=CC=CC=C3)=C2)=C1)N[C@@H]4CC[C@H](N5CCN(C6=NC=C(C=C6)F)CC5)CC4",
+      "pubchem_cid": 23725625,
+      "molecular_weight": 534.6
+    },
+    "performance": {
+      "match_score": 0.92,
+      "efficacy_range": [
+        0.75,
+        0.95
+      ],
+      "toxicity_profile": {
+        "Nausea": 0.42,
+        "Fatigue": 0.65,
+        "Anemia": 0.38,
+        "Cardiac Risk": 0.13
+      }
+    }
+  },
+  {
+    "drug_name": "Niraparib",
+    "drug_id": "DB11928",
+    "developer": "GlaxoSmithKline",
+    "mechanism_class": "Enzyme Inhibitor",
+    "mechanism": "PARP inhibitor",
+    "repair_type": "HR",
+    "approval": "FDA",
+    "clinical_phase": 4,
+    "indications": [
+      "Ovarian Cancer",
+      "Fallopian Tube Cancer",
+      "Peritoneal Cancer"
+    ],
+    "line_of_therapy": [
+      "Maintenance"
+    ],
+    "route": "Oral",
+    "pharmacokinetics": {
+      "bioavailability_percent": 73,
+      "half_life_hours": 36,
+      "metabolism": "Carboxylesterases"
+    },
+    "biomarkers": {
+      "required_mutations": [
+        "HRD-positive status"
+      ],
+      "companion_diagnostic": "myChoice CDx",
+      "resistance_mechanisms": [
+        "Upregulation of drug efflux pumps"
+      ]
+    },
+    "computational": {
+      "smiles": "C1CC(C1)C(=O)NC2=CC=C(C=C2)C3=C(C=CC(=O)N3)N4C=C(C=N4)C5=CC=NC=C5",
+      "pubchem_cid": 24823101,
+      "molecular_weight": 420.5
+    },
+    "performance": {
+      "match_score": 0.9,
+      "efficacy_range": [
+        0.7,
+        0.92
+      ],
+      "toxicity_profile": {
+        "Nausea": 0.35,
+        "Thrombocytopenia": 0.4,
+        "Fatigue": 0.55
+      }
+    }
+  },
+  {
+    "drug_name": "Pembrolizumab",
+    "drug_id": "DB09037",
+    "developer": "Merck",
+    "mechanism_class": "Monoclonal Antibody",
+    "mechanism": "PD-1 immune checkpoint inhibitor",
+    "repair_type": "MMR",
+    "approval": "FDA",
+    "clinical_phase": 4,
+    "indications": [
+      "Melanoma",
+      "NSCLC",
+      "HNSCC",
+      "cHL",
+      "Urothelial Carcinoma",
+      "MSI-H/dMMR tumors"
+    ],
+    "line_of_therapy": [
+      "1st-line",
+      "2nd-line",
+      "Adjuvant"
+    ],
+    "route": "IV",
+    "pharmacokinetics": {
+      "bioavailability_percent": 100,
+      "half_life_hours": 624,
+      "metabolism": "Catabolism"
+    },
+    "biomarkers": {
+      "required_mutations": [
+        "PD-L1 expression",
+        "MSI-H",
+        "dMMR",
+        "High TMB"
+      ],
+      "companion_diagnostic": "PD-L1 IHC 22C3 pharmDx",
+      "resistance_mechanisms": [
+        "Loss of beta-2-microglobulin (B2M)",
+        "JAK1/2 mutations"
+      ]
+    },
+    "computational": {
+      "smiles": "N/A (Biologic)",
+      "pubchem_cid": null,
+      "molecular_weight": 149000
+    },
+    "performance": {
+      "match_score": 0.85,
+      "efficacy_range": [
+        0.6,
+        0.8
+      ],
+      "toxicity_profile": {
+        "Immune-related AE": 0.36,
+        "Thyroiditis": 0.28,
+        "Skin Rash": 0.33
+      }
+    }
+  },
+  {
+    "drug_name": "Cisplatin",
+    "drug_id": "DB00515",
+    "developer": "Various (Generic)",
+    "mechanism_class": "Alkylating Agent",
+    "mechanism": "DNA crosslinking platinum agent",
+    "repair_type": "NER",
+    "approval": "FDA",
+    "clinical_phase": 4,
+    "indications": [
+      "Testicular Cancer",
+      "Ovarian Cancer",
+      "Bladder Cancer",
+      "Lung Cancer"
+    ],
+    "line_of_therapy": [
+      "1st-line",
+      "Neoadjuvant",
+      "Adjuvant"
+    ],
+    "route": "IV",
+    "pharmacokinetics": {
+      "bioavailability_percent": 100,
+      "half_life_hours": 73,
+      "metabolism": "Non-enzymatic"
+    },
+    "biomarkers": {
+      "required_mutations": [
+        "None (broad-spectrum)"
+      ],
+      "companion_diagnostic": null,
+      "resistance_mechanisms": [
+        "Increased NER activity",
+        "Decreased drug uptake"
+      ]
+    },
+    "computational": {
+      "smiles": "[NH3+].[NH3+].[Cl-].[Cl-].[Pt+2]",
+      "pubchem_cid": 5702168,
+      "molecular_weight": 300.0
+    },
+    "performance": {
+      "match_score": 0.86,
+      "efficacy_range": [
+        0.6,
+        0.85
+      ],
+      "toxicity_profile": {
+        "Nephrotoxicity": 0.45,
+        "Ototoxicity": 0.35,
+        "Nausea/Vomiting": 0.55
+      }
+    }
+  },
+  {
+    "drug_name": "Veliparib",
+    "drug_id": "DB11649",
+    "developer": "AbbVie",
+    "mechanism_class": "Enzyme Inhibitor",
+    "mechanism": "PARP inhibitor",
+    "repair_type": "HR",
+    "approval": "Trial",
+    "clinical_phase": 3,
+    "indications": [
+      "NSCLC (investigational)",
+      "Breast Cancer (investigational)"
+    ],
+    "line_of_therapy": [
+      "Investigational"
+    ],
+    "route": "Oral",
+    "pharmacokinetics": {
+      "bioavailability_percent": 50,
+      "half_life_hours": 5,
+      "metabolism": "CYP2D6"
+    },
+    "biomarkers": {
+      "required_mutations": [
+        "gBRCA1",
+        "gBRCA2"
+      ],
+      "companion_diagnostic": "N/A",
+      "resistance_mechanisms": [
+        "Under investigation"
+      ]
+    },
+    "computational": {
+      "smiles": "O=C(N)C1=C(C)C=C(NC(=O)C2=CC3=C(N2)C=C(C)C=C3)C=C1",
+      "pubchem_cid": 10250689,
+      "molecular_weight": 322.4
+    },
+    "performance": {
+      "match_score": 0.78,
+      "efficacy_range": [
+        0.55,
+        0.8
+      ],
+      "toxicity_profile": {
+        "Nausea": 0.3,
+        "Fatigue": 0.4
+      }
+    }
+  }
+]

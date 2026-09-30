@@ -1,0 +1,42 @@
+CLINICAL DISCHARGE SUMMARY
+==========================
+PATIENT NAME: Johnathan Doe
+PATIENT DOB: 1982-08-15
+GENDER: Male
+AMGI PATIENT ID: AMGI-US-2026-0009481
+PRIMARY CONTACT: j.doe@example.com
+
+ADMISSION DATE: 2026-06-01
+DISCHARGE DATE: 2026-06-05
+
+PRIMARY DIAGNOSIS:
+------------------
+1. Type 2 Diabetes Mellitus (E11.9)
+2. Essential Hypertension (I10)
+3. Elevated breast/prostate cancer genetic risk (Z80.3)
+
+MEDICATIONS ON DISCHARGE:
+-------------------------
+1. Metformin 1000mg BID
+2. Lisinopril 10mg QD
+3. Atorvastatin 20mg QD
+
+GENOMIC PROFILE DETAILS:
+-----------------------
+- Analyzed Variant: BRCA2 c.9976A>T (p.Lys3326Ter)
+- Chromosome: chr13:32398489 (GRCh38)
+- Allele: A > T
+- ClinVar Classification: Benign/Likely Benign (often reported as low-penetrance risk factor or modifier in specific cohorts).
+- Pharmacogenomics Note: Patient is a CYP2D6 poor metabolizer (based on prior genotyping *4/*4). Avoid codeine due to lack of efficacy; use alternative analgesics if required.
+
+CLINICAL COURSE:
+----------------
+Patient was admitted for glycemic control optimization after presenting with an HbA1c of 8.4%. During admission, his Metformin dose was adjusted to 1000mg twice daily. Hypertension remains stable on Lisinopril 10mg daily. 
+
+Due to a family history of early-onset malignancies, genetic screening was performed which identified the BRCA2 c.9976A>T variant. Genetic counseling was completed during the stay, advising that this specific variant is widely considered benign/likely benign in the general population, though regular screening is maintained due to strong family history.
+
+FOLLOW-UP PLAN:
+---------------
+1. Routine HbA1c check in 3 months with Primary Care Provider.
+2. Maintain low-sodium, diabetic-friendly diet.
+3. Annual screening recommendations per oncology consult.
